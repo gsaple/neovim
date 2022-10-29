@@ -12,12 +12,12 @@ opt.ruler = false
 opt.sidescrolloff = 5
 opt.scrolloff = 2
 opt.shiftwidth = 4 -- number of spaces when <<, >> or = is pressed
---opt.showcmd = false
---opt.cmdheight = 0
+opt.showcmd = false
+opt.cmdheight = 0
 opt.shortmess:append "sI"
 opt.showbreak = '↳ '
 opt.showmode = false
---opt.signcolumn = "yes"
+opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
 opt.splitbelow = true
