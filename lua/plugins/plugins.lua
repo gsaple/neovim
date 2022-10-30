@@ -6,8 +6,7 @@ return require('packer').startup(function(use)
   use {
     "sainnhe/gruvbox-material",
     config = function()
-      vim.g.gruvbox_material_ui_contrast = 'high'
-      vim.cmd "colorscheme gruvbox-material"
+       require('plugins.config').gruv()
     end,
   }
 
@@ -16,13 +15,7 @@ return require('packer').startup(function(use)
      "nvim-lualine/lualine.nvim",
      event = "BufReadPre",
      config = function()
-       require("lualine").setup {
-         options = {
-           theme = 'gruvbox-material',
-           section_separators = '',
-           component_separators = '',
-         }
-       }
+       require('plugins.config').lualine()
      end,
    }
 
