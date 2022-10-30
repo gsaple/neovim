@@ -20,8 +20,22 @@ M.lualine = function()
       theme = 'gruvbox-material',
       section_separators = '',
       component_separators = '',
+    },
+    sections = {
+      lualine_b = {'branch'},
     }
   }
 end
+
+  -- web dev icon
+  M.webicon = function()
+    local ok, icon = pcall(require, 'nvim-web-devicons')
+    if not ok then
+      return
+    end
+    icon.setup {
+      default = true,
+    }
+  end
 
 return M

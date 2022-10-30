@@ -19,4 +19,13 @@ return require('packer').startup(function(use)
      end,
    }
 
+   -- dev icons
+   use {
+     "kyazdani42/nvim-web-devicons",
+      module = "nvim-web-devicons",
+      config = function()
+        require('plugins.config').webicon()
+      end,
+   }
+   
 end)
