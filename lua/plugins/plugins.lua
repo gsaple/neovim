@@ -27,5 +27,15 @@ return require('packer').startup(function(use)
         require('plugins.config').webicon()
       end,
    }
-   
+
+   -- luasnip
+   use {
+     "L3MON4D3/LuaSnip",
+     tag = "v<CurrentMajor>.*",
+     event = "BufReadPre",
+     config = function()
+       require('plugins.config').luasnip()
+     end,
+   }
+
 end)
