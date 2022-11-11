@@ -1,5 +1,6 @@
 local opt = vim.opt
 opt.clipboard = "unnamedplus"  -- access the system clipboard
+opt.completeopt = "menu,menuone,noselect"
 opt.cursorline = true
 opt.expandtab = true -- convert tabs to spaces when a <Tab> is pressed
 opt.history = 2000
@@ -8,15 +9,15 @@ opt.laststatus = 3
 opt.linebreak = true
 opt.listchars = "tab: ,space:␣,eol:﬋,trail:"
 opt.mouse = "a" -- allow mouse to be used in nvic
+opt.pumheight = 10
 opt.ruler = false
-opt.sidescrolloff = 5
 opt.scrolloff = 2
 opt.shiftwidth = 4 -- number of spaces when <<, >> or = is pressed
-opt.showcmd = false
-opt.cmdheight = 0
 opt.shortmess:append "sI"
 opt.showbreak = '↳ '
+opt.showcmd = false
 opt.showmode = false
+opt.sidescrolloff = 5
 opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
@@ -28,4 +29,5 @@ opt.timeoutlen = 300
 opt.termguicolors = true
 opt.updatetime = 300
 opt.virtualedit = 'block'
+opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"  

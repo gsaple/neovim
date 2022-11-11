@@ -6,9 +6,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- do not open command line window
-keymap("n", "q:", "<Nop>", opts)
-
 -- last non-blank char
 keymap("n", "<leader>l", "g_", opts)
 -- first non-blank char
@@ -43,7 +40,7 @@ keymap("n", "<C-Left>", "<cmd>vertical-resize -2<cr>", opts)
 keymap("n", "<leader>b", "<cmd>bprevious<cr>", opts)
 keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
 
--- redraw the screen with current line in the middel
+-- redraw the screen with current line in the middle
 keymap("i", "<C-\\>", "<C-o>zz", opts)
 
 -- moving in insert_mode
@@ -72,3 +69,7 @@ keymap("n", "<leader>a", [[:/[^\d0-\d127]<cr>]], opts)
 -- center search results
 keymap("n", "n", "nzz", default_opts)
 keymap("n", "N", "Nzz", default_opts)
+
+-- paste in insert mode, require unnamedplus for clipboard
+keymap("i", "<C-r>", "<C-r>+", opts)
+keymap("n", "<leader>p", "<cmd>set paste!<cr>", opts)
