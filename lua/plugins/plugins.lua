@@ -2,10 +2,20 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- nvim-treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufEnter",
+    run = ":TSUpdate",
+    config= function()
+      require('plugins.config').treesitter()
+    end,
+  }
+
   -- colour scheme
   use {
     "sainnhe/gruvbox-material",
-    event = "BufReadPre",
+    after= "nvim-treesitter",
     config = function()
        require('plugins.config').gruv()
     end,

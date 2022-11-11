@@ -124,7 +124,7 @@ M.cmp = function()
   -- filetype specific
   --cmp.setup.filetype({ 'lua', 'help' }, {
   --  completion = { autocomplete = false },
-  --  sources = { 
+  --  sources = {
   --    {name = "buffer"},
   --    {name = 'nvim_lua'}
   --  },
@@ -135,6 +135,22 @@ M.cmp = function()
       { name = 'path' },
       { name = 'cmdline' },
       })
+  })
+end
+
+-- treesitter
+M.treesitter = function()
+  local ok, treesitter = pcall(require, 'nvim-treesitter.configs')
+  if not ok then
+    return
+  end
+
+  treesitter.setup({
+    ensure_installed = { "c", "lua" },
+    highlight = {
+      enable = true,
+    },
+    indent = { enable = true, },
   })
 end
 
