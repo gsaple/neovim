@@ -7,15 +7,25 @@ return require('packer').startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
     run = ":TSUpdate",
-    config= function()
+    config = function()
       require('plugins.config').treesitter()
+    end,
+  }
+
+  -- indentation line
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    after = "nvim-treesitter",
+    tag = "v2.20.2",
+    config = function()
+      require('plugins.config').indent_blankline()
     end,
   }
 
   -- colour scheme
   use {
     "sainnhe/gruvbox-material",
-    after= "nvim-treesitter",
+    after = "nvim-treesitter",
     config = function()
        require('plugins.config').gruv()
     end,
@@ -43,6 +53,7 @@ return require('packer').startup(function(use)
   use {
     "L3MON4D3/LuaSnip",
     event = "BufReadPre",
+    tag = "v1.1.0",
     config = function()
       require('plugins.config').luasnip()
     end,

@@ -154,4 +154,36 @@ M.treesitter = function()
   })
 end
 
+-- indent_blankline
+M.indent_blankline = function()
+  local ok, indent_blankline = pcall(require, 'indent_blankline')
+  if not ok then
+    return
+  end
+
+  indent_blankline.setup({
+		filetype_exclude = {
+      "help",
+      "terminal",
+      "alpha",
+      "packer",
+      "lspinfo",
+      "TelescopePrompt",
+      "TelescopeResults",
+      "mason",
+      "",
+    },
+    show_current_context = true,
+    use_treesitter = true,
+    show_trailing_blankline_indent = false,
+  })
+  vim.cmd [[highlight IndentBlanklineContextChar guifg=#b16286 gui=nocombine]]
+  vim.cmd [[highlight IndentBlanklineContextSpaceChar guifg=#b16286 gui=nocombine]]
+  vim.keymap.set("n", "<leader>i",
+    function()
+      vim.g.indent_blankline_enabled = not vim.g.indent_blankline_enabled
+    end,
+    {noremap = true, silent = true})
+end
+
 return M
