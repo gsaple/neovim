@@ -72,4 +72,14 @@ return require('packer').startup(function(use)
       require('plugins.config').cmp()
     end,
   }
+
+  -- nvim-autopairs
+  use {
+    "windwp/nvim-autopairs",
+    event = "BufReadPre",
+    config = function()
+      require('plugins.config').autopairs()
+    end,
+  }
+
 end)
