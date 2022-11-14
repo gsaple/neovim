@@ -9,21 +9,12 @@ M.gruv = function()
   end
 end
 
-M.lualine = function()
-  local ok, lualine = pcall(require, 'lualine')
+-- lightline
+M.lightline = function()
+  local ok, _ = pcall(vim.cmd, [[let g:lightline = {'colorscheme' : 'gruvbox_material'}]])
   if not ok then
     return
   end
-  lualine.setup {
-    options = {
-      theme = 'gruvbox-material',
-      section_separators = '',
-      component_separators = '',
-    },
-    sections= {
-      lualine_b = {'branch'},
-    }
-  }
 end
 
 -- web dev icon

@@ -33,10 +33,10 @@ return require('packer').startup(function(use)
 
   -- statusline
   use {
-    "nvim-lualine/lualine.nvim",
+    "itchyny/lightline.vim",
     after = "gruvbox-material",
     config = function()
-      require('plugins.config').lualine()
+      require('plugins.config').lightline()
     end,
   }
 
