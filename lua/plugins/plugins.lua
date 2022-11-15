@@ -5,8 +5,13 @@ return require('packer').startup(function(use)
   -- nvim-treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufEnter",
+    event = "BufWinEnter",
     run = ":TSUpdate",
+  }
+
+  use {
+    "p00f/nvim-ts-rainbow",
+    after = "nvim-treesitter",
     config = function()
       require('plugins.config').treesitter()
     end,
@@ -15,7 +20,7 @@ return require('packer').startup(function(use)
   -- indentation line
   use {
     "lukas-reineke/indent-blankline.nvim",
-    after = "nvim-treesitter",
+    after = "gruvbox-material",
     tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
