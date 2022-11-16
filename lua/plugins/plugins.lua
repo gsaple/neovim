@@ -7,14 +7,23 @@ return require('packer').startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     event = "BufWinEnter",
     run = ":TSUpdate",
+    config = function()
+      require('plugins.config').treesitter()
+    end,
+  }
+
+  -- colour scheme
+  use {
+    "sainnhe/gruvbox-material",
+    after = "nvim-treesitter",
+    config = function()
+      require('plugins.config').gruv()
+    end,
   }
 
   use {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter",
-    config = function()
-      require('plugins.config').treesitter()
-    end,
   }
 
   -- indentation line
@@ -24,15 +33,6 @@ return require('packer').startup(function(use)
     tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
-    end,
-  }
-
-  -- colour scheme
-  use {
-    "sainnhe/gruvbox-material",
-    after = "nvim-treesitter",
-    config = function()
-       require('plugins.config').gruv()
     end,
   }
 
