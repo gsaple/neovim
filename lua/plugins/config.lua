@@ -115,6 +115,7 @@ M.cmp = function()
           buffer = "[Buffer]",
           path = "[Path]",
           cmdline = "[Cmd]",
+          spell= "[Spell]"
         })[entry.source.name]
         return vim_item
       end
@@ -135,6 +136,13 @@ M.cmp = function()
       { name = 'path' },
       { name = 'cmdline' },
       })
+  })
+
+  cmp.setup.filetype({'markdown', 'fish'}, {
+    sources = {
+      {name = 'spell'},
+      {name = 'buffer'},
+    },
   })
 end
 
