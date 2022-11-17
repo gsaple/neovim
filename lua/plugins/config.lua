@@ -1,7 +1,7 @@
 local M = {}
 
 -- gruvbox_material scheme
-M.gruv = function() 
+M.colour_scheme = function()
   vim.g.gruvbox_material_ui_contrast = 'high'
   local ok, _ = pcall(vim.cmd, 'colorscheme gruvbox-material')
   if not ok then
@@ -57,6 +57,7 @@ M.cmp = function()
     return
   end
 
+  -- cmp icons
   local kind_icons = {
     Text = "",
     Method = "",
@@ -122,7 +123,7 @@ M.cmp = function()
     },
   })
 
-  -- filetype specific
+  -- filetype specific example
   --cmp.setup.filetype({ 'lua', 'help' }, {
   --  completion = { autocomplete = false },
   --  sources = {
@@ -131,6 +132,7 @@ M.cmp = function()
   --  },
   --})
 
+  -- cmdline
   cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
       { name = 'path' },
@@ -138,6 +140,7 @@ M.cmp = function()
       })
   })
 
+  -- markdown
   cmp.setup.filetype({'markdown', 'fish'}, {
     sources = {
       {name = 'spell'},

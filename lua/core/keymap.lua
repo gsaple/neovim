@@ -61,7 +61,7 @@ keymap("x", "<S-k>", ":move '<-2<cr>gv-gv", opts)
 keymap("v", "p", '"_dP', default_opts)
 
 -- uppercase word in insert mode, put the cursor within or at the end
-keymap("i", "~", "<Esc>gUiw`]a", opts)   
+keymap("i", "~", "<Esc>gUiw`]a", opts)
 
 -- search for non-ASCII chars
 keymap("n", "<leader>a", [[:/[^\d0-\d127]<cr>]], opts)

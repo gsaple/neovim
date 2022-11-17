@@ -17,10 +17,11 @@ return require('packer').startup(function(use)
     "sainnhe/gruvbox-material",
     after = "nvim-treesitter",
     config = function()
-      require('plugins.config').gruv()
+      require('plugins.config').colour_scheme()
     end,
   }
 
+  -- ts-rainbow
   use {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter",
