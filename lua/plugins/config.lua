@@ -38,7 +38,7 @@ M.luasnip = function()
   require("luasnip").config.set_config {
     enable_autosnippets = true,
     update_events = 'TextChanged,TextChangedI',
-    region_check_events = 'CursorMoved',
+    region_check_events = 'InsertEnter',
   }
   vim.cmd([[imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' ]])
   vim.cmd([[smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>']])
@@ -157,7 +157,7 @@ M.treesitter = function()
   end
 
   treesitter.setup({
-    ensure_installed = { "c", "lua" },
+    ensure_installed = { "c", "lua", "cpp"},
     highlight = {
       enable = false,
     },
