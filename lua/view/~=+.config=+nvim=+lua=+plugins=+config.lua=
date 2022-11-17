@@ -23,6 +23,7 @@ silent! normal! zE
 152,173fold
 176,205fold
 208,218fold
+220,241fold
 let &fdl = &fdl
 3
 normal! zo

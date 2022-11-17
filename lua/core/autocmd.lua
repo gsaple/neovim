@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd({"BufWinEnter"}, {
   group = id,
 })
 
-vim.api.nvim_create_autocmd({"BufWinLeave"}, {
+vim.api.nvim_create_autocmd({"VimLeave"}, {
   pattern = {"config.lua", "plugins.lua"},
   command = "silent! mkview!",
   group = id,

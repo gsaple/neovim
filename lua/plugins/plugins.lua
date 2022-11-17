@@ -89,4 +89,13 @@ return require('packer').startup(function(use)
     end,
   }
 
+  -- nvim-colorizer
+  use {
+    "norcalli/nvim-colorizer.lua",
+    event = "BufWinEnter",
+    config = function()
+      require('plugins.config').colorizer()
+    end,
+  }
+
 end)
