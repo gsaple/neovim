@@ -159,7 +159,7 @@ M.treesitter = function()
   treesitter.setup({
     ensure_installed = { "c", "lua" },
     highlight = {
-      enable = true,
+      enable = false,
     },
     indent = { enable = true, },
     rainbow = {
@@ -169,7 +169,7 @@ M.treesitter = function()
       max_file_lines = nil, -- Do not enable for files with more than n lines, int
     },
   })
-  vim.keymap.set("n", "<leader>r", "<cmd>TSBufToggle rainbow<cr>", {noremap = true, silent = true})
+  vim.keymap.set("n", "<leader>r", "<cmd>TSBufToggle highlight | TSBufToggle rainbow<cr>", {noremap = true, silent = true})
 end
 
 -- indent_blankline
