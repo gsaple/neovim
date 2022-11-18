@@ -97,8 +97,7 @@ M.cmp = function()
       ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
       ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
-      ['<Space>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {"i"}),
-      ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {"c"}),
+      ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {"i", "c"}),
     },
     sources = {
       { name = "buffer" },
@@ -242,6 +241,60 @@ M.colorizer = function()
   vim.defer_fn(function()
     colorizer.attach_to_buffer(0)
   end, 0)
+end
+
+-- telescope
+M.telescope = function()
+  local ok, telescope = pcall(require, 'telescope')
+  if not ok then
+    return
+  end
+  --local action_layout = require("telescope.actions.layout")
+  local actions = require "telescope.actions"
+  telescope.setup({
+    defaults = {
+      -- appearance
+      prompt_prefix = "   ",
+      selection_caret = "  ",
+      sorting_strategy = "ascending",
+      layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+          height = 0.8,
+        },
+      },
+      --file_ignore_patterns = {"^node_modules/"},
+      --better to put files to be ignored in a gitignore file, see https://github.com/nvim-telescope/telescope.nvim/issues/522
+			mappings = {
+        i = {
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+          ["<C-n>"] = actions.cycle_history_next,
+          ["<C-p>"] = actions.cycle_history_prev,
+          ["<C-u>"] = false,
+          ["<Down>"] = actions.select_horizontal,
+          ["<Right>"] = actions.select_vertical,
+          ["<Up>"] = actions.select_tab,
+          ["<Left>"] = false,
+          ["<C-_>"] = actions.which_key, --<C-/>
+          ["<C-l>"] = actions.close,
+          --["<M-p>"] = action_layout.toggle_preview
+        },
+        n = {
+          ["q"] = actions.close,
+          ["?"] = actions.which_key,
+        }
+      },
+      --preview = {hide_on_startup = true},
+      preview = false,
+    }
+  })
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<leader>ff', builtin.find_files, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>fg', builtin.live_grep, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>fh', builtin.help_tags, {noremap = true, silent = true})
 end
 
 return M

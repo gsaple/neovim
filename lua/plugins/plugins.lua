@@ -2,6 +2,21 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- dev icons
+  use {
+    "kyazdani42/nvim-web-devicons",
+     module = "nvim-web-devicons",
+     config = function()
+       require('plugins.config').webicon()
+     end,
+  }
+
+  -- plenary
+  use {
+    "nvim-lua/plenary.nvim",
+    module = "plenary",
+  }
+
   -- nvim-treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -46,15 +61,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-  -- dev icons
-  use {
-    "kyazdani42/nvim-web-devicons",
-     module = "nvim-web-devicons",
-     config = function()
-       require('plugins.config').webicon()
-     end,
-  }
-
   -- luasnip
   use {
     "L3MON4D3/LuaSnip",
@@ -95,6 +101,16 @@ return require('packer').startup(function(use)
     event = "BufWinEnter",
     config = function()
       require('plugins.config').colorizer()
+    end,
+  }
+
+  -- telescope
+  use {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.0",
+    event = "BufWinEnter",
+    config = function()
+      require('plugins.config').telescope()
     end,
   }
 
