@@ -36,10 +36,6 @@ keymap("n", "<C-Down>", "<cmd>resize -2<cr>", opts)
 keymap("n", "<C-Right>", "<cmd>vertical-resize +2<cr>", opts)
 keymap("n", "<C-Left>", "<cmd>vertical-resize -2<cr>", opts)
 
--- navigate buffers
-keymap("n", "<leader>b", "<cmd>bprevious<cr>", opts)
-keymap("n", "<leader>n", "<cmd>bnext<cr>", opts)
-
 -- redraw the screen with current line in the middle
 keymap("i", "<C-\\>", "<C-o>zz", opts)
 

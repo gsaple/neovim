@@ -291,10 +291,30 @@ M.telescope = function()
     }
   })
   local builtin = require('telescope.builtin')
-  vim.keymap.set('n', '<leader>ff', builtin.find_files, {noremap = true, silent = true})
-  vim.keymap.set('n', '<leader>fg', builtin.live_grep, {noremap = true, silent = true})
-  vim.keymap.set('n', '<leader>fb', builtin.buffers, {noremap = true, silent = true})
-  vim.keymap.set('n', '<leader>fh', builtin.help_tags, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>f', builtin.find_files, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>g', builtin.live_grep, {noremap = true, silent = true})
+  vim.keymap.set('n', '<leader>b', builtin.buffers, {noremap = true, silent = true})
+  vim.keymap.set('n', '<S-h>', builtin.help_tags, {noremap = true, silent = true})
+
+  -- prompt theme
+  -- taken from https://github.com/NvChad/base46/blob/master/lua/base46/integrations/telescope.lua
+  local TelescopePrompt = {
+    TelescopeBorder = { fg = "#222222", bg = "#222222" },
+    TelescopePromptBorder = { fg = "#2e2e2e", bg = "#2e2e2e", },
+    TelescopePromptNormal = { fg = "#ebdbb2", bg = "#2e2e2e", },
+    TelescopePromptPrefix = { fg = "#e78a4e", bg = "#2e2e2e", },
+    TelescopeNormal = { bg = "#222222" },
+    TelescopePreviewTitle = { fg = "#282828", bg = "#89b482", },
+    TelescopePromptTitle = { fg = "#282828", bg = "#ea6962", },
+    TelescopeResultsTitle = { fg = "#222222", bg = "#222222", },
+    TelescopeSelection = { bg = "#2e2e2e", fg = "#ebdbb2" },
+    TelescopeResultsDiffAdd = { fg = "#89b482", },
+    TelescopeResultsDiffChange = { fg = "#d8a657", },
+    TelescopeResultsDiffDelete = { fg = "#ea6962", },
+  }
+  for hl, col in pairs(TelescopePrompt) do
+      vim.api.nvim_set_hl(0, hl, col)
+  end
 end
 
 return M
