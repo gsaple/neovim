@@ -2,7 +2,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- dev icons
+  -- dev icons {{{
   use {
     "kyazdani42/nvim-web-devicons",
      module = "nvim-web-devicons",
@@ -10,14 +10,16 @@ return require('packer').startup(function(use)
        require('plugins.config').webicon()
      end,
   }
+  -- }}}
 
-  -- plenary
+  -- plenary {{{
   use {
     "nvim-lua/plenary.nvim",
     module = "plenary",
   }
+  -- }}}
 
-  -- nvim-treesitter
+  -- nvim-treesitter {{{
   use {
     "nvim-treesitter/nvim-treesitter",
     event = "BufWinEnter",
@@ -26,8 +28,9 @@ return require('packer').startup(function(use)
       require('plugins.config').treesitter()
     end,
   }
+  -- }}}
 
-  -- colour scheme
+  -- colour scheme {{{
   use {
     "sainnhe/gruvbox-material",
     after = "nvim-treesitter",
@@ -35,14 +38,16 @@ return require('packer').startup(function(use)
       require('plugins.config').colour_scheme()
     end,
   }
+  -- }}}
 
-  -- ts-rainbow
+  -- ts-rainbow {{{
   use {
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter",
   }
+  -- }}}
 
-  -- indentation line
+  -- indentation line {{{
   use {
     "lukas-reineke/indent-blankline.nvim",
     after = "gruvbox-material",
@@ -51,8 +56,9 @@ return require('packer').startup(function(use)
       require('plugins.config').indent_blankline()
     end,
   }
+  -- }}}
 
-  -- statusline
+  -- statusline {{{
   use {
     "itchyny/lightline.vim",
     after = "gruvbox-material",
@@ -60,8 +66,9 @@ return require('packer').startup(function(use)
       require('plugins.config').lightline()
     end,
   }
+  -- }}}
 
-  -- luasnip
+  -- luasnip {{{
   use {
     "L3MON4D3/LuaSnip",
     event = "BufReadPre",
@@ -70,8 +77,9 @@ return require('packer').startup(function(use)
       require('plugins.config').luasnip()
     end,
   }
+  -- }}}
 
-  -- nvim-cmp
+  -- nvim-cmp {{{
   use {
     "hrsh7th/nvim-cmp",
     event = "BufReadPre",
@@ -85,8 +93,9 @@ return require('packer').startup(function(use)
       require('plugins.config').cmp()
     end,
   }
+  -- }}}
 
-  -- nvim-autopairs
+  -- nvim-autopairs {{{
   use {
     "windwp/nvim-autopairs",
     event = "BufReadPre",
@@ -94,8 +103,9 @@ return require('packer').startup(function(use)
       require('plugins.config').autopairs()
     end,
   }
+  -- }}}
 
-  -- nvim-colorizer
+  -- nvim-colorizer {{{
   use {
     "norcalli/nvim-colorizer.lua",
     event = "BufWinEnter",
@@ -103,8 +113,9 @@ return require('packer').startup(function(use)
       require('plugins.config').colorizer()
     end,
   }
+  -- }}}
 
-  -- telescope
+  -- telescope {{{
   use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
@@ -113,5 +124,6 @@ return require('packer').startup(function(use)
       require('plugins.config').telescope()
     end,
   }
+  -- }}}
 
 end)

@@ -1,6 +1,6 @@
 local M = {}
 
--- gruvbox_material scheme
+-- gruvbox_material scheme {{{
 M.colour_scheme = function()
   vim.g.gruvbox_material_ui_contrast = 'high'
   local ok, _ = pcall(vim.cmd, 'colorscheme gruvbox-material')
@@ -8,16 +8,18 @@ M.colour_scheme = function()
     return
   end
 end
+--}}}
 
--- lightline
+-- lightline {{{
 M.lightline = function()
   local ok, _ = pcall(vim.cmd, [[let g:lightline = {'colorscheme' : 'gruvbox_material'}]])
   if not ok then
     return
   end
 end
+-- }}}
 
--- web dev icon
+-- web dev icon {{{
 M.webicon = function()
   local ok, icon = pcall(require, 'nvim-web-devicons')
   if not ok then
@@ -27,8 +29,9 @@ M.webicon = function()
     default = true,
   }
 end
+-- }}}
 
--- luasnip
+-- luasnip {{{
 M.luasnip = function()
   local ok, luasnip = pcall(require, 'luasnip')
   if not ok then
@@ -49,8 +52,9 @@ M.luasnip = function()
   vim.keymap.set("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
   vim.keymap.set("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
 end
+-- }}}
 
--- cmp
+-- cmp {{{
 M.cmp = function()
   local ok, cmp = pcall(require, 'cmp')
   if not ok then
@@ -147,8 +151,9 @@ M.cmp = function()
     },
   })
 end
+-- }}}
 
--- treesitter
+-- treesitter {{{
 M.treesitter = function()
   local ok, treesitter = pcall(require, 'nvim-treesitter.configs')
   if not ok then
@@ -170,8 +175,9 @@ M.treesitter = function()
   })
   vim.keymap.set("n", "<leader>r", "<cmd>TSBufToggle highlight | TSBufToggle rainbow<cr>", {noremap = true, silent = true})
 end
+-- }}}
 
--- indent_blankline
+-- indent_blankline {{{
 M.indent_blankline = function()
   local ok, indent_blankline = pcall(require, 'indent_blankline')
   if not ok then
@@ -202,8 +208,9 @@ M.indent_blankline = function()
     end,
     {noremap = true, silent = true})
 end
+-- }}}
 
--- nvim-autopairs
+-- nvim-autopairs {{{
 M.autopairs = function()
   local ok, autopairs = pcall(require, 'nvim-autopairs')
   if not ok then
@@ -215,8 +222,9 @@ M.autopairs = function()
     fast_wrap = {},
   })
 end
+-- }}}
 
--- colorizer
+-- colorizer {{{
 M.colorizer = function()
   local ok, colorizer = pcall(require, 'colorizer')
   if not ok then
@@ -242,8 +250,9 @@ M.colorizer = function()
     colorizer.attach_to_buffer(0)
   end, 0)
 end
+-- }}}
 
--- telescope
+-- telescope {{{
 M.telescope = function()
   local ok, telescope = pcall(require, 'telescope')
   if not ok then
@@ -316,5 +325,6 @@ M.telescope = function()
       vim.api.nvim_set_hl(0, hl, col)
   end
 end
+--- }}}
 
 return M

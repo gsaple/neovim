@@ -4,6 +4,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.cursorline = true
 opt.expandtab = true -- convert tabs to spaces when a <Tab> is pressed
 opt.fillchars = {vert = "|"}
+opt.foldmethod = "marker"
 opt.history = 2000
 opt.ignorecase = true
 opt.laststatus = 3
@@ -33,7 +34,7 @@ opt.virtualedit = 'block'
 opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"  
 
--- disable some builtin vim plugins
+-- disable some builtin vim plugins {{{
 local default_plugins = {
   "2html_plugin",
   "getscript",
@@ -62,18 +63,16 @@ local default_plugins = {
   "bugreport",
   "ftplugin",
 }
-
 for _, plugin in pairs(default_plugins) do
   vim.g["loaded_" .. plugin] = 1
 end
-
 local default_providers = {
   "node",
   "perl",
   "python3",
   "ruby",
 }
-
 for _, provider in ipairs(default_providers) do
   vim.g["loaded_" .. provider .. "_provider"] = 0
 end
+---}}}
