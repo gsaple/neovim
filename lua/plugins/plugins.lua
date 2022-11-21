@@ -119,10 +119,21 @@ return require('packer').startup(function(use)
   use {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.0",
-    event = "BufWinEnter",
+    cmd = "Telescope",
+    module = "telescope",
     config = function()
       require('plugins.config').telescope()
     end,
+  }
+  -- }}}
+
+  -- telescope-fzf-native.nvim {{{
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    after = "telescope.nvim",
+    disable = vim.fn.executable "make" == 0,
+    run = "make",
+    config = function() require("telescope").load_extension "fzf" end,
   }
   -- }}}
 

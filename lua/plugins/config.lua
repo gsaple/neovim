@@ -299,11 +299,6 @@ M.telescope = function()
       preview = false,
     }
   })
-  local builtin = require('telescope.builtin')
-  vim.keymap.set('n', '<leader>f', builtin.find_files, {noremap = true, silent = true})
-  vim.keymap.set('n', '<leader>g', builtin.live_grep, {noremap = true, silent = true})
-  vim.keymap.set('n', '<leader>b', builtin.buffers, {noremap = true, silent = true})
-  vim.keymap.set('n', '<S-h>', builtin.help_tags, {noremap = true, silent = true})
 
   -- prompt theme
   -- taken from https://github.com/NvChad/base46/blob/master/lua/base46/integrations/telescope.lua

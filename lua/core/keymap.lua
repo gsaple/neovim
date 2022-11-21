@@ -69,3 +69,9 @@ keymap("n", "N", "Nzz", default_opts)
 -- paste in insert mode, require unnamedplus for clipboard
 keymap("i", "<C-r>", "<C-r>+", opts)
 keymap("n", "<leader>p", "<cmd>set paste!<cr>", opts)
+
+-- Telescope
+keymap('n', '<leader>f', "<cmd> Telescope find_files <cr>", opts)
+keymap('n', '<leader>g', "<cmd> Telescope live_grep <cr>", opt)
+keymap('n', '<leader>b', "<cmd> Telescope buffers<cr>", opts)
+keymap('n', '<S-h>', "<cmd>Telescope help_tags<cr>", opts)
