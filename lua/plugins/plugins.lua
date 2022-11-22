@@ -1,6 +1,10 @@
 return require('packer').startup(function(use)
-  -- Packer can manage itself
+
+  local open_file = { "BufRead", "BufWinEnter", "BufNewFile" },
+
+  -- packer itself {{{
   use 'wbthomason/packer.nvim'
+  -- }}}
 
   -- dev icons {{{
   use {
@@ -22,18 +26,19 @@ return require('packer').startup(function(use)
   -- nvim-treesitter {{{
   use {
     "nvim-treesitter/nvim-treesitter",
-    event = "BufWinEnter",
     run = ":TSUpdate",
     config = function()
       require('plugins.config').treesitter()
     end,
+    -- just an ugly workaround in relates to https://github.com/nvim-treesitter/nvim-treesitter#i-experience-weird-highlighting-issues-similar-to-78
+    cmd = {"TSBufToggle"}
   }
   -- }}}
 
   -- colour scheme {{{
   use {
     "sainnhe/gruvbox-material",
-    after = "nvim-treesitter",
+    event = open_file,
     config = function()
       require('plugins.config').colour_scheme()
     end,
@@ -50,7 +55,7 @@ return require('packer').startup(function(use)
   -- indentation line {{{
   use {
     "lukas-reineke/indent-blankline.nvim",
-    after = "gruvbox-material",
+    after = "nvim-treesitter",
     tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
@@ -108,7 +113,7 @@ return require('packer').startup(function(use)
   -- nvim-colorizer {{{
   use {
     "norcalli/nvim-colorizer.lua",
-    event = "BufWinEnter",
+    event = open_file,
     config = function()
       require('plugins.config').colorizer()
     end,
