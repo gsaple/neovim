@@ -1,0 +1,22 @@
+return {
+  Normal = { bg = C.black, fg = C.white },
+  ColorColumn = { bg = none, bg = D.light_black },
+  CurSearch = { fg = C.black, bg = cursor },
+  CursorColumn = { fg = none, bg = D.light_black },
+  CursorLine = { fg = none, bg = D.light_black },
+  NonText = { bg = C.black, fg = D.grey0 },
+  ErrorMsg = { bg = D.dark_red, fg = none },
+  WinSeparator = { fg = D.grey0, bg = none },
+  Folded = { bg = D.Light_black, fg = D.grey0 },
+  FoldColumn = { bg = C.black, fg = C.white },
+  SignColumn = { bg = none, fg = none },
+  IncSearch = { bg = cursor, fg = C.black },
+  Search = { bg = C.red, fg = C.black },
+  lineNr = { bg = none, fg = D.grey1 },
+  CursorlineNr = { bg = none, fg = D.grey1 },
+  MatchParen = { bg = C.white, fg = C.black },
+  Question = { bg = none, fg = C.green },
+  --StatusLine = {bg = "#a89984", fg = none},
+  --StatusLineNC = {bg = "#928374", fg = none},
+  --StatusLine = {bg = none, fg = none}
+}
