@@ -12,6 +12,3 @@ for category, colour in pairs(themes) do
     vim.api.nvim_set_hl(0, group, spec)
   end
 end
-
--- setup statusline
---vim.opt.statusline = "%!v:lua.require('ui.statusline').config()"

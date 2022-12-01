@@ -7,8 +7,9 @@ end
 
 -- here pass int instead of string for highlighting
 return {
-  light_black = lighten(C.black, 10),
-  grey0 = lighten(C.white, -80),
-  grey1 = lighten(C.white, -55),
+  light_black = lighten(C.black, 5),
+  black1 = lighten(C.black, 10),
+  black2 = lighten(C.black, 30),
+  grey1 = lighten(C.grey, -30),
   dark_red = lighten(C.red, -40),
 }
