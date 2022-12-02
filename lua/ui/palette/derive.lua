@@ -5,11 +5,15 @@ local lighten = function(colour, increment)
   return string.gsub(colour, '#', '0x') + increment * 65793 -- 1 + 16^2 + 16^4
 end
 
+M = {}
 -- here pass int instead of string for highlighting
-return {
-  light_black = lighten(C.black, 5),
-  black1 = lighten(C.black, 10),
-  black2 = lighten(C.black, 30),
-  grey1 = lighten(C.grey, -30),
-  dark_red = lighten(C.red, -40),
-}
+M.derived_colour = function(C)
+  return {
+    light_black = lighten(C.black, 5),
+    black1 = lighten(C.black, 10),
+    black2 = lighten(C.black, 30),
+    grey1 = lighten(C.grey, -30),
+    dark_red = lighten(C.red, -40),
+  }
+end
+return M

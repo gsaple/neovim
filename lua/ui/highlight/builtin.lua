@@ -17,6 +17,4 @@ return {
   MatchParen = { bg = C.white, fg = C.black },
   Question = { bg = none, fg = C.green },
   Cursor = { bg = red, fg = C.green },
-  StatusLine = {bg = D.black1, fg = none},
-  StatusLineNC = {bg = D.black1, fg = C.white}, -- fg only makes it unequal to above, no practical purposes
 }
