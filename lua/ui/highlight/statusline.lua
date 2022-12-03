@@ -9,10 +9,10 @@ M.highlight = function(C, D)
     StatusLineCommandMode = {bg = C.magenta, fg = C.black, bold = true},
     StatusLineTerminalMode = {bg = C.cyan, fg = C.black, bold = true},
     StatusLineModeNotFound = {bg = C.grey, fg = C.black, bold = true},
-    StatusLineFileInfo = {bg = D.black1, fg = C.white},
-    StatusLineFileType = {bg = D.black2, fg = C.white},
-    StatusLine = {bg = D.black1, fg = C.none},
-    StatusLineNC = {bg = D.black1, fg = C.white}, -- fg only makes it unequal to above, no practical purposes
+    StatusLineFileInfo = {bg = C.black, fg = C.white},
+    StatusLineFileType = {bg = C.black, fg = C.white},
+    StatusLine = {bg = C.black, fg = C.none},
+    StatusLineNC = {bg = C.black, fg = C.white}, -- fg only makes it unequal to above, no practical purposes
   }
 end
 return M
