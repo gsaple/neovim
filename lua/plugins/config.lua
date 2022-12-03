@@ -244,10 +244,6 @@ M.colorizer = function()
       mode     = 'background'; -- Set the display mode.
     },
   })
-  vim.keymap.set("n", "<leader>c", "<cmd>ColorizerToggle<cr>", {noremap = true, silent = true})
-  vim.defer_fn(function()
-    colorizer.attach_to_buffer(0)
-  end, 0)
 end
 -- }}}
 

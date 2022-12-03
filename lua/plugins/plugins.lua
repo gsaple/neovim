@@ -113,7 +113,7 @@ return require('packer').startup(function(use)
   -- nvim-colorizer {{{
   use {
     "norcalli/nvim-colorizer.lua",
-    event = open_file,
+    cmd = "ColorizerToggle",
     config = function()
       require('plugins.config').colorizer()
     end,
