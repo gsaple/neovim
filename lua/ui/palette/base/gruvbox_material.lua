@@ -8,5 +8,6 @@ return {
   cyan    = '#89b482',
   white   = '#d4be98',
   orange  = '#e78a4e',
-  grey    = '#7c6f64'
+  grey    = '#7c6f64',
+  none    = 'NONE',
 }
