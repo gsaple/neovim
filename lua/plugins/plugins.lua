@@ -1,7 +1,7 @@
 return require('packer').startup(function(use)
 
   -- packer itself {{{
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim', opt = true }
   -- }}}
 
   -- dev icons {{{
