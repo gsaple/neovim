@@ -40,5 +40,21 @@ return {
     f(function(args, snip, _) return args[1][1]:match("[^/]+$") end, {1}),
     i(1, repo),
     i(0),
-  }))
+  })),
+
+  s("hi", fmt([[
+  M = {{}}
+  M.highlight = function(C, D)
+    return {{
+      {} = {{ bg = {}, fg = {} }},
+      {}
+    }}
+  end
+  return M
+  ]], {
+    i(1, "group"),
+    i(2),
+    i(3),
+    i(0),
+  })),
 }

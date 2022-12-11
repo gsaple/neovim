@@ -14,6 +14,7 @@ M.derived_colour = function(C)
     black2 = lighten(C.black, 30),
     grey1 = lighten(C.grey, -30),
     dark_red = lighten(C.red, -40),
+    dark_blue = lighten(C.blue, -40),
     cursor = '#528bff', -- should be the same as the terminal cursor
   }
 end

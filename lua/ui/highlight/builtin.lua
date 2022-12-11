@@ -2,10 +2,11 @@ M = {}
 M.highlight = function(C, D)
   return {
     Normal = { bg = C.black, fg = C.white },
-    ColorColumn = { bg = D.light_black, fg = C.none},
-    CurSearch = { bg = D.cursor, fg = C.none},
+    ColorColumn = { bg = D.light_black, fg = C.none },
+    CurSearch = { bg = D.cursor, fg = C.none },
     CursorColumn = { bg = D.light_black, fg = C.none },
     CursorLine = { bg = D.light_black, fg = C.none },
+    Directory = { bg = C.none, fg = C.cyan },
     NonText = { bg = C.black, fg = C.grey },
     ErrorMsg = { bg = D.dark_red, fg = C.none },
     WinSeparator = { fg = C.grey, bg = C.none },
@@ -21,8 +22,10 @@ M.highlight = function(C, D)
     Cursor = { bg = red, fg = C.green },
     Pmenu = { bg = C.black, fg = C.white },
     PmenuSel = { bg = D.light_black, fg = C.white },
+    SpecialKey = { bg = C.none, fg = C.cyan },
     SpellBad = { strikethrough = true },
     SpellCap = { bg = D.dark_red, fg = C.white },
+    Title = { bg = C.none, fg = C.magenta, bold = true },
     Visual = { bg = C.red, fg = C.black },
   }
 end
