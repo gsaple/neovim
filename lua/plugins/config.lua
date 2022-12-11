@@ -276,25 +276,6 @@ M.telescope = function()
     }
   })
 
-  -- prompt theme
-  -- taken from https://github.com/NvChad/base46/blob/master/lua/base46/integrations/telescope.lua
-  local TelescopePrompt = {
-    TelescopeBorder = { fg = "#222222", bg = "#222222" },
-    TelescopePromptBorder = { fg = "#2e2e2e", bg = "#2e2e2e", },
-    TelescopePromptNormal = { fg = "#ebdbb2", bg = "#2e2e2e", },
-    TelescopePromptPrefix = { fg = "#e78a4e", bg = "#2e2e2e", },
-    TelescopeNormal = { bg = "#222222" },
-    TelescopePreviewTitle = { fg = "#282828", bg = "#89b482", },
-    TelescopePromptTitle = { fg = "#282828", bg = "#ea6962", },
-    TelescopeResultsTitle = { fg = "#222222", bg = "#222222", },
-    TelescopeSelection = { bg = "#2e2e2e", fg = "#ebdbb2" },
-    TelescopeResultsDiffAdd = { fg = "#89b482", },
-    TelescopeResultsDiffChange = { fg = "#d8a657", },
-    TelescopeResultsDiffDelete = { fg = "#ea6962", },
-  }
-  for hl, col in pairs(TelescopePrompt) do
-      vim.api.nvim_set_hl(0, hl, col)
-  end
 end
 --- }}}
 
