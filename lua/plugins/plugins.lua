@@ -120,4 +120,11 @@ return require('packer').startup(function(use)
     config = function() require("telescope").load_extension "fzf" end,
   }
   -- }}}
+
+  -- playground {{{
+  use {
+    "nvim-treesitter/playground",
+    after = "nvim-treesitter"
+  }
+  -- }}}
 end)

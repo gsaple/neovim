@@ -77,6 +77,8 @@ keymap('n', '<S-h>', "<cmd>Telescope help_tags<cr>", opts)
 
 -- Treesitter
 vim.keymap.set("n", "<leader>r", "<cmd>TSBufToggle highlight | TSBufToggle rainbow<cr>", opts)
+vim.keymap.set("n", "<leader>t", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+
 -- Colorizer
 vim.keymap.set("n", "<leader>c", "<cmd>ColorizerToggle<cr>", opts)
 
