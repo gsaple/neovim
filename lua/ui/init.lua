@@ -1,7 +1,7 @@
 -- available themes: gruvbox_material, onedark
 local themes = {
   gruvbox_material = { 'builtin', 'syntax', 'treesitter' },
-  onedark = { 'statusline' },
+  onedark = { 'statusline', 'rainbow' },
 }
 
 for colour, categories in pairs(themes) do
