@@ -1,24 +1,5 @@
 local M = {}
 
--- gruvbox_material scheme {{{
-M.colour_scheme = function()
-  vim.g.gruvbox_material_ui_contrast = 'high'
-  local ok, _ = pcall(vim.cmd, 'colorscheme gruvbox-material')
-  if not ok then
-    return
-  end
-end
---}}}
-
--- lightline {{{
-M.lightline = function()
-  local ok, _ = pcall(vim.cmd, [[let g:lightline = {'colorscheme' : 'gruvbox_material'}]])
-  if not ok then
-    return
-  end
-end
--- }}}
-
 -- web dev icon {{{
 M.webicon = function()
   local ok, icon = pcall(require, 'nvim-web-devicons')

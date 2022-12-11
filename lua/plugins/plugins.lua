@@ -1,7 +1,5 @@
 return require('packer').startup(function(use)
 
-  local open_file = { "BufRead", "BufWinEnter", "BufNewFile" },
-
   -- packer itself {{{
   use 'wbthomason/packer.nvim'
   -- }}}
@@ -34,14 +32,6 @@ return require('packer').startup(function(use)
     cmd = {"TSBufToggle"}
   }
   -- }}}
-
-  -- colour scheme {{{
-  use {
-    "sainnhe/gruvbox-material",
-    event = open_file,
-    config = function()
-      require('plugins.config').colour_scheme()
-    end,
   }
   -- }}}
 
@@ -59,16 +49,6 @@ return require('packer').startup(function(use)
     tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
-    end,
-  }
-  -- }}}
-
-  -- statusline {{{
-  use {
-    "itchyny/lightline.vim",
-    after = "gruvbox-material",
-    config = function()
-      require('plugins.config').lightline()
     end,
   }
   -- }}}
