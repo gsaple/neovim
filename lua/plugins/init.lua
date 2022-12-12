@@ -1,5 +1,5 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 local firsttime_setup = false
 if fn.empty(fn.glob(install_path)) > 0 then
   firsttime_setup = fn.system {
