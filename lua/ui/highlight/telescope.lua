@@ -6,7 +6,7 @@ M.highlight = function(C, D)
     TelescopeNormal = { bg = C.black, fg = C.white },
     TelescopePromptBorder = { bg = D.light_black, fg = D.light_black },
     TelescopePromptNormal = { bg = D.light_black, fg = C.white },
-    TelescopePromptPrefix = { bg = D.light_black, fg = C.orange },
+    TelescopePromptPrefix = { bg = none, fg = C.green },
     TelescopePromptTitle = { bg = C.red, fg = C.black },
     TelescopeResultsTitle = { link = 'TelescopeBorder' },
     TelescopePreviewTitle = { bg = C.green, fg = C.black },
