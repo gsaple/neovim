@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
   -- nvim-autopairs {{{
   use {
     "windwp/nvim-autopairs",
-    event = "BufReadPre",
+    event = "InsertEnter",
     config = function()
       require('plugins.config').autopairs()
     end,
