@@ -3,7 +3,7 @@ M.highlight = function(C, D)
   return {
     Normal = { bg = C.black, fg = C.white },
     ColorColumn = { bg = D.light_black, fg = C.none },
-    CurSearch = { bg = D.cursor, fg = C.none },
+    CurSearch = { bg = D.cursor, fg = C.black },
     CursorColumn = { bg = D.light_black, fg = C.none },
     CursorLine = { bg = D.light_black, fg = C.none },
     Directory = { bg = C.none, fg = C.cyan },
@@ -19,7 +19,6 @@ M.highlight = function(C, D)
     CursorlineNr = { bg = C.none, fg = C.grey },
     MatchParen = { bg = C.white, fg = C.black },
     Question = { bg = C.none, fg = C.green },
-    Cursor = { bg = red, fg = C.green },
     Pmenu = { bg = C.black, fg = C.white },
     PmenuSel = { bg = D.light_black, fg = C.white },
     SpecialKey = { bg = C.none, fg = C.cyan },
