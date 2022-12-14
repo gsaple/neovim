@@ -19,6 +19,7 @@ M.luasnip = function()
     return
   end
   require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})
+  require("luasnip.loaders.from_vscode").lazy_load()
   require("luasnip").config.set_config {
     enable_autosnippets = true,
     update_events = 'TextChanged,TextChangedI',

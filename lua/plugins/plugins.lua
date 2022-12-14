@@ -55,11 +55,19 @@ return require('packer').startup(function(use)
   -- luasnip {{{
   use {
     "L3MON4D3/LuaSnip",
-    event = "BufReadPre",
+    module = "luasnip",
     tag = "v1.1.0",
     config = function()
       require('plugins.config').luasnip()
     end,
+    --disable = true,
+  }
+  -- }}}
+
+  -- snippets collections {{{
+  use {
+    "rafamadriz/friendly-snippets",
+    after = "nvim-cmp",
   }
   -- }}}
 
