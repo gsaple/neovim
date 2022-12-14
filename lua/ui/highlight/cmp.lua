@@ -1,0 +1,38 @@
+M = {}
+M.highlight = function(C, D)
+  return {
+    CmpNormal = { bg = C.none, fg = C.white },
+    CmpBorder = { bg = C.none, fg = C.grey },
+    CmpSel = { bg = D.light_black, fg = C.none },
+    CmpItemAbbr = { bg = C.none, fg = C.white },
+    CmpItemAbbrDeprecated = { bg = C.none, fg = C.grey, strikethrough = true },
+    CmpItemAbbrMatch = { link = 'Special' },
+    CmpItemAbbrMatchFuzzy = { link = 'Special' },
+    CmpItemKindClass = { link = '@type' },
+    CmpItemKindColor = { link = '@label' },
+    CmpItemKindConstant = { link = '@constant' },
+    CmpItemKindConstructor = { link = '@constructor' },
+    CmpItemKindEnum = { link = '@type' },
+    CmpItemKindEnumMember = { link = '@field' },
+    CmpItemKindEvent = { link = 'Special' },
+    CmpItemKindField = { link = '@field' },
+    CmpItemKindFile = { link = 'Directory' },
+    CmpItemKindFolder = { link = 'Directory' },
+    CmpItemKindFunction = { link = '@function' },
+    CmpItemKindInterface = { link = '@type' },
+    CmpItemKindKeyword = { link = '@keyword' },
+    CmpItemKindMethod = { link = '@method' },
+    CmpItemKindModule = { link = '@namespace' },
+    CmpItemKindOperator = { link = '@operator' },
+    CmpItemKindProperty = { link = '@property' },
+    CmpItemKindReference = { link = '@type' },
+    CmpItemKindSnippet = { link = 'Statement' },
+    CmpItemKindStruct = { link = '@type' },
+    CmpItemKindText = { link = 'Comment' },
+    CmpItemKindTypeParameter = { link = '@parameter' },
+    CmpItemKindUnit = { link = '@constant' },
+    CmpItemKindValue = { link = '@constant' },
+    CmpItemKindVariable = { link = '@variable' },
+  }
+end
+return M

@@ -66,12 +66,13 @@ return require('packer').startup(function(use)
   -- nvim-cmp {{{
   use {
     "hrsh7th/nvim-cmp",
-    event = "BufReadPre",
+    event = { 'InsertEnter', 'CmdlineEnter' },
     requires = {
-      {"hrsh7th/cmp-buffer", after = "nvim-cmp"},
-      {"hrsh7th/cmp-path", after = "nvim-cmp"},
-      {"hrsh7th/cmp-cmdline", after = "nvim-cmp"},
-      {"f3fora/cmp-spell", after = "nvim-cmp"}
+      { "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" },
+      { "hrsh7th/cmp-buffer", after = "nvim-cmp" },
+      { "hrsh7th/cmp-path", after = "nvim-cmp" },
+      { "hrsh7th/cmp-cmdline", after = "nvim-cmp" },
+      { "f3fora/cmp-spell", after = "nvim-cmp" }
     },
     config = function()
       require('plugins.config').cmp()

@@ -42,7 +42,7 @@ M.cmp = function()
     return
   end
 
-  -- cmp icons
+  -- cmp icons {{{
   local kind_icons = {
     Text = "",
     Method = "",
@@ -70,11 +70,22 @@ M.cmp = function()
     Operator = "",
     TypeParameter = ""
   }
+  --}}}
 
-  -- global settings
+  -- global settings {{{
   cmp.setup({
+     snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
     window = {
-      completion = cmp.config.window.bordered(),
+      completion = {
+        border = 'rounded',
+        winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,Search:None,CursorLine:CmpSel",
+        --zindex = 1001,
+        scrollbar = false,
+      },
       documentation = cmp.config.disable,
     },
     mapping = {
@@ -83,54 +94,46 @@ M.cmp = function()
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
       ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
       ['<CR>'] = cmp.mapping(cmp.mapping.confirm({ select = true }), {"i", "c"}),
-    },
-    sources = {
-      { name = "buffer" },
+      --["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), {"i", "c"}),
+      --["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
     },
     completion = {
       keyword_length = 3,
     },
     formatting = {
-      fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
-        -- Kind icons
-        vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-        -- Source
-        vim_item.menu = ({
-          buffer = "[Buffer]",
-          path = "[Path]",
-          cmdline = "[Cmd]",
-          spell= "[Spell]"
-        })[entry.source.name]
+        vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
         return vim_item
-      end
+      end,
+    },
+    enabled = function() return cmp_toggle end,
+  })
+  --- }}}
+
+  -- filetype specific settings
+  cmp.setup.filetype({ 'lua' }, {
+    --completion = { autocomplete = false },
+    sources = {
+      { name = "buffer" },
+      { name = "luasnip" },
     },
   })
 
-  -- filetype specific example
-  --cmp.setup.filetype({ 'lua', 'help' }, {
-  --  completion = { autocomplete = false },
-  --  sources = {
-  --    {name = "buffer"},
-  --    {name = 'nvim_lua'}
-  --  },
-  --})
+  cmp.setup.filetype({'markdown', 'fish'}, {
+    sources = {
+      { name = 'spell' },
+      { name = 'buffer' },
+    },
+  })
 
   -- cmdline
   cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
       { name = 'path' },
       { name = 'cmdline' },
-      })
+      }),
   })
 
-  -- markdown
-  cmp.setup.filetype({'markdown', 'fish'}, {
-    sources = {
-      {name = 'spell'},
-      {name = 'buffer'},
-    },
-  })
 end
 -- }}}
 

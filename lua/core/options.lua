@@ -33,6 +33,7 @@ opt.updatetime = 300
 opt.virtualedit = 'block'
 opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"  
+cmp_toggle = true
 
 -- disable some builtin vim plugins {{{
 local default_plugins = {

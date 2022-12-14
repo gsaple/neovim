@@ -82,3 +82,6 @@ vim.keymap.set("n", "<leader>t", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts
 -- Colorizer
 vim.keymap.set("n", "<leader>c", "<cmd>ColorizerToggle<cr>", opts)
 
+-- toggle cmp
+vim.keymap.set("n", "<leader>i", "<cmd>lua cmp_toggle = not cmp_toggle<cr>", opts)
+
