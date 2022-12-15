@@ -180,17 +180,12 @@ M.indent_blankline = function()
       "mason",
       "",
     },
+    context_char = " ",
     show_current_context = true,
     use_treesitter = true,
     show_trailing_blankline_indent = false,
   })
-  vim.cmd [[highlight IndentBlanklineContextChar guifg=#b16286 gui=nocombine]]
-  vim.cmd [[highlight IndentBlanklineContextSpaceChar guifg=#b16286 gui=nocombine]]
-  vim.keymap.set("n", "<leader>i",
-    function()
-      vim.g.indent_blankline_enabled = not vim.g.indent_blankline_enabled
-    end,
-    {noremap = true, silent = true})
+  vim.cmd [[IndentBlanklineDisable]]
 end
 -- }}}
 

@@ -85,3 +85,6 @@ vim.keymap.set("n", "<leader>c", "<cmd>ColorizerToggle<cr>", opts)
 -- toggle cmp
 vim.keymap.set("n", "<leader>i", "<cmd>lua cmp_toggle = not cmp_toggle<cr>", opts)
 
+-- toggle indent blankline
+vim.keymap.set("n", "<leader>q", "<cmd>IndentBlanklineToggle<cr>", opts)
+

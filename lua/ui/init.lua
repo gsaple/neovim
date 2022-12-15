@@ -1,6 +1,6 @@
 -- available themes: gruvbox_material, onedark
 local themes = {
-  gruvbox_material = { 'builtin', 'syntax', 'treesitter' },
+  gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline' },
   onedark = { 'statusline', 'rainbow', 'telescope', 'cmp'},
 }
 

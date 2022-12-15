@@ -44,7 +44,8 @@ return require('packer').startup(function(use)
   -- indentation line {{{
   use {
     "lukas-reineke/indent-blankline.nvim",
-    after = "nvim-treesitter",
+    --after = "nvim-treesitter",
+    cmd = "IndentBlanklineToggle",
     tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
