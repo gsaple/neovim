@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
     "lukas-reineke/indent-blankline.nvim",
     --after = "nvim-treesitter",
     cmd = "IndentBlanklineToggle",
-    tag = "v2.20.2",
     config = function()
       require('plugins.config').indent_blankline()
     end,
@@ -112,7 +111,7 @@ return require('packer').startup(function(use)
   -- telescope {{{
   use {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.0",
+    --tag = "0.1.0",
     cmd = "Telescope",
     module = "telescope",
     config = function()
