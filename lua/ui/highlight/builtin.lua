@@ -22,7 +22,7 @@ M.highlight = function(C, D)
     Pmenu = { bg = C.black, fg = C.white },
     PmenuSel = { bg = D.light_black, fg = C.white },
     SpecialKey = { bg = C.none, fg = C.cyan },
-    SpellBad = { strikethrough = true },
+    SpellBad = { underline = true },
     SpellCap = { bg = D.dark_red, fg = C.white },
     Title = { bg = C.none, fg = C.magenta, bold = true },
     Visual = { bg = C.red, fg = C.black },
