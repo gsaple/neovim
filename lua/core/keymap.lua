@@ -6,22 +6,18 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- stop highlighting
+keymap("n", "<Esc>", "<cmd>nohlsearch<Bar>echo<cr>", opts)
+
 -- last non-blank char
 keymap("n", "<leader>l", "g_", opts)
+
 -- first non-blank char
 keymap("n", "<leader>h", "^", opts)
 
--- toggle number and relative number
-keymap("n", "<leader>k", "<cmd>set nu!<Bar> set rnu!<cr>", opts)
-
--- toggle cursor line
-keymap("n", "<S-k>", "<cmd>set cursorline!<cr>", opts)
-
--- toggle non-printable chars
-keymap("n", "<S-l>", "<cmd>set list!<cr>", opts)
-
--- stop highlighting
-keymap("n", "<Esc>", "<cmd>nohlsearch<Bar>echo<cr>", opts)
+-- find fildes
+keymap("n", "<S-f>", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<S-b>", "<cmd>Telescope buffers<cr>", opts)
 
 -- navigation, split, close, resize for windows
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -54,37 +50,14 @@ keymap("x", "<S-j>", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "<S-k>", ":move '<-2<cr>gv-gv", opts)
 
 -- paste over currently selected text without yanking it
-keymap("v", "p", '"_dP', default_opts)
+keymap("v", "p", '"_dP', opts)
 
 -- uppercase word in insert mode, put the cursor within or at the end
-keymap("i", "~", "<Esc>gUiw`]a", opts)
-
--- search for non-ASCII chars
-keymap("n", "<leader>a", [[:/[^\d0-\d127]<cr>]], opts)
+keymap("i", "<C-c>", "<Esc>gUiw`]a", opts)
 
 -- center search results
-keymap("n", "n", "nzz", default_opts)
-keymap("n", "N", "Nzz", default_opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- paste in insert mode, require unnamedplus for clipboard
 keymap("i", "<C-r>", "<C-r>+", opts)
-
--- Telescope
-keymap('n', '<leader>f', "<cmd>Telescope find_files<cr>", opts)
-keymap('n', '<leader>g', "<cmd>Telescope live_grep<cr>", opt)
-keymap('n', '<leader>b', "<cmd>Telescope buffers<cr>", opts)
-keymap('n', '<S-h>', "<cmd>Telescope help_tags<cr>", opts)
-
--- Treesitter
-vim.keymap.set("n", "<leader>r", "<cmd>TSBufToggle highlight | TSBufToggle rainbow<cr>", opts)
-vim.keymap.set("n", "<leader>t", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
-
--- Colorizer
-vim.keymap.set("n", "<leader>c", "<cmd>ColorizerToggle<cr>", opts)
-
--- toggle cmp
-vim.keymap.set("n", "<leader>i", "<cmd>lua cmp_toggle = not cmp_toggle<cr>", opts)
-
--- toggle indent blankline
-vim.keymap.set("n", "<leader>q", "<cmd>IndentBlanklineToggle<cr>", opts)
-

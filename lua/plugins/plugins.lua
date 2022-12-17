@@ -137,4 +137,14 @@ return require('packer').startup(function(use)
     after = "nvim-treesitter"
   }
   -- }}}
+
+  -- which-key  {{{
+  use {
+    "folke/which-key.nvim",
+    keys = "<leader>",
+    config = function()
+      require('plugins.config').which_key()
+    end,
+  }
+  -- }}}
 end)
