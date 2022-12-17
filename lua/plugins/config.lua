@@ -233,7 +233,7 @@ M.telescope = function()
   if not ok then
     return
   end
-  --local action_layout = require("telescope.actions.layout")
+  local action_layout = require("telescope.actions.layout")
   local actions = require "telescope.actions"
   telescope.setup({
     defaults = {
@@ -256,22 +256,20 @@ M.telescope = function()
           ["<C-k>"] = actions.move_selection_previous,
           ["<C-n>"] = actions.cycle_history_next,
           ["<C-p>"] = actions.cycle_history_prev,
-          ["<C-u>"] = false,
-          ["<Down>"] = actions.select_horizontal,
-          ["<Right>"] = actions.select_vertical,
-          ["<Up>"] = actions.select_tab,
-          ["<Left>"] = false,
+          ["<C-s>"] = actions.select_vertical,
+          ["<C-t>"] = actions.select_horizontal,
+          ["<C-x>"] = actions.select_tab,
           ["<C-_>"] = actions.which_key, --<C-/>
-          ["<C-l>"] = actions.close,
-          --["<M-p>"] = action_layout.toggle_preview
+          ["<Esc>"] = actions.close,
+          ["<M-p>"] = action_layout.toggle_preview,
+          ["<C-c>"] = false,
         },
         n = {
           ["q"] = actions.close,
           ["?"] = actions.which_key,
         }
       },
-      --preview = {hide_on_startup = true},
-      preview = false,
+      preview = {hide_on_startup = true},
     }
   })
 
