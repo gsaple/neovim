@@ -340,4 +340,39 @@ M.which_key = function()
 end
 -- }}}
 
+-- nvim-tree {{{
+M.nvim_tree = function()
+  local ok, nvim_tree = pcall(require, 'nvim-tree')
+  if not ok then
+    return
+  end
+  local HEIGHT_RATIO = 0.8
+  local WIDTH_RATIO = 0.4
+  nvim_tree.setup({
+    view = {
+      float = {
+        enable = true,
+        open_win_config = function()
+          local screen_w = vim.opt.columns:get()
+          local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+          local window_w = math.floor(screen_w * WIDTH_RATIO)
+          local window_h = math.floor(screen_h * HEIGHT_RATIO)
+          local start_x = (screen_w - window_w) / 2
+          local start_x = (screen_w - window_w) / 2
+          local start_y = (screen_h - window_h) / 2
+          return {
+            border = 'rounded',
+            relative = 'editor',
+            row = start_y,
+            col = start_x,
+            width = window_w,
+            height = window_h,
+          }
+        end,
+      },
+    },
+  })
+end
+-- }}}
+
 return M

@@ -19,6 +19,7 @@ return {
     C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
     t = { "<cmd>TSBufToggle highlight<cr>", "treesitter" },
     r = { "<cmd>TSBufToggle rainbow<cr>", "rainbow brackets" },
+    f = { "<cmd>NvimTreeToggle<cr>", "file explorer" },
   },
   f = {
     name = "Finder",

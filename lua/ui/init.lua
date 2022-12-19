@@ -2,7 +2,7 @@
 -- linked components should use same colour sheme
 local themes = {
   gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline', 'cmp'},
-  onedark = { 'statusline', 'rainbow', 'telescope', 'which_key'},
+  onedark = { 'statusline', 'rainbow', 'telescope', 'which_key', 'nvim_tree', 'float_window'},
 }
 
 for colour, categories in pairs(themes) do

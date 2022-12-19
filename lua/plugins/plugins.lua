@@ -146,4 +146,18 @@ return require('packer').startup(function(use)
     end,
   }
   -- }}}
+
+  -- nvim-tree.lua' {{{
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    cmd = 'NvimTreeToggle',
+    tag = 'nightly',
+    config = function()
+      require('plugins.config').nvim_tree()
+    end,
+  }
+  -- }}}
 end)
