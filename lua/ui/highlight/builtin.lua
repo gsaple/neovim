@@ -9,7 +9,7 @@ M.highlight = function(C, D)
     Directory = { bg = C.none, fg = C.cyan },
     NonText = { bg = C.black, fg = C.grey },
     ErrorMsg = { bg = D.dark_red, fg = C.none },
-    WinSeparator = { fg = C.grey, bg = C.none },
+    WinSeparator = { fg = C.none, bg = D.black1 },
     Folded = { bg = D.light_black, fg = C.grey },
     FoldColumn = { bg = C.black, fg = C.white },
     SignColumn = { bg = C.none, fg = C.none },

@@ -3,7 +3,8 @@ opt.clipboard = "unnamedplus"  -- access the system clipboard
 opt.completeopt = "menu,menuone,noselect"
 --opt.cursorline = true
 opt.expandtab = true -- convert tabs to spaces when a <Tab> is pressed
-opt.fillchars = {vert = "|"}
+opt.fillchars = {vert = " ", vertleft = " ", vertright = " ",
+                 horiz = " ", horizup = " ", horizdown = " ",verthoriz = " "}
 opt.foldmethod = "marker"
 opt.history = 2000
 opt.ignorecase = true

@@ -10,7 +10,7 @@ M = {}
 M.derived_colour = function(C)
   return {
     light_black = lighten(C.black, 5),
-    black1 = lighten(C.black, 10),
+    black1 = lighten(C.black, -5),
     black2 = lighten(C.black, 30),
     grey1 = lighten(C.grey, -30),
     dark_red = lighten(C.red, -40),
