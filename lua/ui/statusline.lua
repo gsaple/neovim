@@ -68,7 +68,7 @@ M.active_statusline = function()
 end
 
 M.inactive_statusline = function()
-  return "%#StatusLineFileInfo# %t"
+  return "%=%#StatusLineFileInfo# %t"
 end
 
 return M
