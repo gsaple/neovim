@@ -315,7 +315,7 @@ M.which_key = function()
     },
     disable = {
       buftypes = {"prompt"},
-      filetypes = { "TelescopePrompt" },
+      filetypes = { "TelescopePrompt", "NvimTree"},
     },
     show_help = false,
     show_keys = false,
@@ -347,7 +347,18 @@ M.nvim_tree = function()
     return
   end
   nvim_tree.setup({
+    hijack_cursor = true,
+    remove_keymaps = { "<Tab>", "<C-e>", "<CR>", "<2-LeftMouse>", "<2-RightMouse>", "<BS>", "o", "O", "a", "E", "-", "s", "g?" },
     view = {
+      mappings = {
+        list = {
+          { key = "l", action = "edit" },
+          { key = "h", action = "close_node" },
+          { key = "<C-f>", action = "create" },
+          { key = "u", action = "dir_up" },
+          { key = "?", action = "toggle_help" },
+        },
+      },
       --adaptive_size = true,
       float = {
         enable = true,
@@ -363,6 +374,30 @@ M.nvim_tree = function()
           }
         end,
       },
+    },
+    renderer = {
+      icons = { git_placement = 'after' },
+    },
+    filters = {
+      custom = { "^\\.git" },
+      exclude = {".gitignore"},
+    },
+    actions = {
+      file_popup = {
+        open_win_config = {
+          row = 0,
+          col = 20,
+          relative = 'cursor',
+          border = 'rounded',
+          style = 'minimal'
+        },
+      },
+      change_dir = {
+        global = true,
+      },
+    },
+    live_filter = {
+      always_show_folders = false,
     },
   })
 end

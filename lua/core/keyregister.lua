@@ -55,5 +55,16 @@ return {
       ["<C-x>"] = { "tab spilt" },
       ["<C-/>"] = { "see all available mappings" },
     },
+    f = {
+      name = "File Explorer",
+      ["?"] = { "see all available mappings" },
+      ["<C-]>"] = { "change directory" },
+      u = { "directory up" },
+      ["<C-f>"] = { "create file (or directory trailing '/')" },
+      ["<C-r>"] = { "rename" },
+      c = { "copy file" },
+      y = { "copy file name" },
+      Y = { "copy relative path" },
+    },
   },
 }
