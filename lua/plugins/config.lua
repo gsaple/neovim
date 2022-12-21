@@ -377,6 +377,7 @@ M.nvim_tree = function()
     },
     renderer = {
       icons = { git_placement = 'after' },
+      root_folder_label = ":~:s?$?//?",
     },
     filters = {
       custom = { "^\\.git" },
