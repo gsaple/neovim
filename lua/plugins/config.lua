@@ -361,7 +361,7 @@ M.nvim_tree = function()
       },
       --adaptive_size = true,
       float = {
-        enable = true,
+        enable = false,
         open_win_config = function()
           return {
             border = 'rounded',

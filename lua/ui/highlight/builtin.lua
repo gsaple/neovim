@@ -2,6 +2,7 @@ M = {}
 M.highlight = function(C, D)
   return {
     Normal = { bg = C.black, fg = C.white },
+    Hide = { bg = C.black, fg = C.black },
     ColorColumn = { bg = D.light_black, fg = C.none },
     CurSearch = { bg = D.cursor, fg = C.black },
     CursorColumn = { bg = D.light_black, fg = C.none },

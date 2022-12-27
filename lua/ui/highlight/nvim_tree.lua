@@ -10,8 +10,8 @@ M.highlight = function(C, D)
     NvimTreeFolderName = { bg = C.none, fg = C.blue },
     NvimTreeEmptyFolderName = { link = 'NvimTreeFolderName'},
     NvimTreeOpenedFolderName = { link = 'NvimTreeFolderName'},
-    --NvimTreeStatusLine = {},
-    --NvimTreeStatusLineNC = {},
+    NvimTreeStatusLine = { link = 'Hide' },
+    NvimTreeStatusLineNC = { link = 'NvimTreeStatusLine' },
     --NvimTreeWinSeparator = {},
   }
 end

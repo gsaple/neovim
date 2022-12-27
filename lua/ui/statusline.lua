@@ -71,4 +71,8 @@ M.inactive_statusline = function()
   return "%=%#StatusLineFileInfo# %t"
 end
 
+M.no_statusline = function()
+  return ""
+end
+
 return M
