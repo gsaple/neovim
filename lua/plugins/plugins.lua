@@ -120,7 +120,7 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- telescope-fzf-native.nvim {{{
+  -- telescope-fzf-native {{{
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     after = "telescope.nvim",
@@ -147,7 +147,7 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- nvim-tree.lua' {{{
+  -- nvim-tree {{{
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {

@@ -375,6 +375,11 @@ M.nvim_tree = function()
         end,
       },
     },
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+      ignore_list = {},
+    },
     renderer = {
       icons = { git_placement = 'after' },
       root_folder_label = ":~:s?$?//?",
