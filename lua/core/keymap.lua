@@ -61,3 +61,7 @@ keymap("n", "N", "Nzz", opts)
 
 -- paste in insert mode, require unnamedplus for clipboard
 keymap("i", "<C-r>", "<C-r>+", opts)
+
+-- navigate through buffers
+keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)

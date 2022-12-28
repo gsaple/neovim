@@ -160,4 +160,18 @@ return require('packer').startup(function(use)
     end,
   }
   -- }}}
+
+  -- bufferline {{{
+  use {
+    "akinsho/bufferline.nvim",
+    requires = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    event = "BufReadPre",
+    tag = "v3.*",
+    config = function()
+      require('plugins.config').bufferline()
+    end,
+  }
+  -- }}}
 end)

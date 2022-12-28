@@ -20,6 +20,7 @@ return {
     t = { "<cmd>TSBufToggle highlight<cr>", "treesitter" },
     r = { "<cmd>TSBufToggle rainbow<cr>", "rainbow brackets" },
     f = { "<cmd>NvimTreeToggle<cr>", "file explorer" },
+    b = { function() vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0) end, "bufferline" },
   },
   f = {
     name = "Finder",
