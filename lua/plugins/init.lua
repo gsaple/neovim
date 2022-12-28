@@ -48,6 +48,10 @@ require('plugins.plugins')
 
 -- bootstrap neovim
 if firsttime_setup then
-  print "Restart Neovim required after installation!"
+  print '=================================='
+  print '    Plugins are being installed'
+  print '    Wait until Packer completes,'
+  print '       then restart nvim'
+  print '=================================='
   require("packer").sync()
 end
