@@ -12,6 +12,7 @@ M.highlight = function(C, D)
     NvimTreeOpenedFolderName = { link = 'NvimTreeFolderName'},
     NvimTreeStatusLine = { link = 'Hide' },
     NvimTreeStatusLineNC = { link = 'NvimTreeStatusLine' },
+    NvimTreeTitle = { bg = C.black, fg = C.green, bold = true }, -- for bufferline offset
     --NvimTreeWinSeparator = {},
   }
 end

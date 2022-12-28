@@ -427,8 +427,9 @@ end
         offsets = {
           {
             filetype = "NvimTree",
-            text = "File Explorer",
+            text = " File Explorer ",
             text_align = "center",
+            highlight = "NvimTreeTitle",
             separator = false,
           },
         },
