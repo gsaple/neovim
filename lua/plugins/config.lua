@@ -377,7 +377,7 @@ M.nvim_tree = function()
     },
     update_focused_file = {
       enable = true,
-      update_root = true,
+      --update_root = true,
       ignore_list = {},
     },
     renderer = {
