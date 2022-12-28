@@ -146,9 +146,11 @@ M.treesitter = function()
   end
 
   treesitter.setup({
-    ensure_installed = { "c", "lua", "cpp"},
+    ensure_installed = { "html", "css", "javascript", "comment",
+                        "c", "lua", "cpp", "python", "java" },
     highlight = {
       enable = false,
+      --disable = { "html" },
     },
     indent = { enable = true, },
     rainbow = {
