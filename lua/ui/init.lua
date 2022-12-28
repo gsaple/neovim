@@ -1,8 +1,10 @@
--- available themes: gruvbox_material, onedark
--- linked components should use same colour sheme
+-- available themes: gruvbox_material, onedark, everforest, kanagawa
+-- linked components may use same colour sheme
 local themes = {
-  gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline', 'cmp'},
-  onedark = { 'statusline', 'rainbow', 'telescope', 'which_key', 'nvim_tree', 'float_window', 'bufferline'},
+  gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline', 'cmp' },
+  everforest = { 'nvim_tree', 'rainbow', 'float_window', 'which_key' },
+  onedark = { 'statusline', 'telescope' },
+  kanagawa = { 'bufferline' }
 }
 
 for colour, categories in pairs(themes) do
