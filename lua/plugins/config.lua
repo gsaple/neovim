@@ -469,6 +469,7 @@ M.project = function()
     detection_methods = { "pattern" },
     patterns = { ".git" },
     silent_chdir = true,
+    datapath = vim.fn.stdpath("data"),
   })
 end
 -- }}}
