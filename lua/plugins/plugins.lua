@@ -186,4 +186,11 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
+  -- bufdelete{{{
+  use {
+    "famiu/bufdelete.nvim",
+    module = "bufdelete",
+  }
+-- }}}
+
 end)
