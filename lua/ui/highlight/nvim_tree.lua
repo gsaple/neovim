@@ -13,7 +13,7 @@ M.highlight = function(C, D)
     NvimTreeStatusLine = { link = 'Hide' },
     NvimTreeStatusLineNC = { link = 'NvimTreeStatusLine' },
     NvimTreeTitle = { bg = C.black, fg = C.green, bold = true }, -- for bufferline offset
-    --NvimTreeWinSeparator = {},
+    NvimTreeWinSeparator = { link = 'Hide' },
   }
 end
 return M
