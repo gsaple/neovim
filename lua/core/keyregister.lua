@@ -2,6 +2,8 @@ return {
   a = { [[:/[^\d0-\d127]<cr>]], "search non-ASCII chars" },
   g = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "treesitter playground" },
   k = { "<cmd>set nu!<Bar> set rnu!<cr>", "toggle line numbers" },
+  n = { "<cmd>tabnew<cr>", "open new project(s)"},
+  i = { "go to ith tab (project)" }, -- doc only
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -30,6 +32,7 @@ return {
     b = { "<cmd> silent! Telescope buffers <cr>", "find buffers" },
     h = { "<cmd> silent! Telescope help_tags <cr>", "help page" },
     o = { "<cmd> silent! Telescope oldfiles <cr>", "find oldfiles" },
+    p = { "<cmd> silent! Telescope projects <cr>", "find project" },
   },
   d = {
     name = "Doc Only",
@@ -54,6 +57,7 @@ return {
       ["<C-s>"] = { "vertical spilt" },
       ["<C-t>"] = { "horizontal spilt" },
       ["<C-x>"] = { "tab spilt" },
+      ["<C-w>"] = { "change working directory" },
       ["<C-/>"] = { "see all available mappings" },
     },
     f = {

@@ -18,6 +18,7 @@ keymap("n", "<leader>h", "^", opts)
 -- find fildes
 keymap("n", "<S-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<S-b>", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<S-p>", "<cmd>Telescope projects<cr>", opts)
 
 -- navigation, split, close, resize for windows
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -65,3 +66,14 @@ keymap("i", "<C-r>", "<C-r>+", opts)
 -- navigate through buffers
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
+
+-- navigate through projects (tabs)
+keymap("n", "<leader>1", "1gt", opts)
+keymap("n", "<leader>2", "2gt", opts)
+keymap("n", "<leader>3", "3gt", opts)
+keymap("n", "<leader>4", "4gt", opts)
+keymap("n", "<leader>5", "5gt", opts)
+keymap("n", "<leader>6", "6gt", opts)
+keymap("n", "<leader>7", "7gt", opts)
+keymap("n", "<leader>8", "8gt", opts)
+keymap("n", "<leader>9", "9gt", opts)

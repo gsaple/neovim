@@ -237,6 +237,7 @@ M.telescope = function()
   end
   local action_layout = require("telescope.actions.layout")
   local actions = require "telescope.actions"
+
   telescope.setup({
     defaults = {
       -- appearance
@@ -272,9 +273,8 @@ M.telescope = function()
         }
       },
       preview = {hide_on_startup = true},
-    }
+    },
   })
-
 end
 --- }}}
 
@@ -348,7 +348,10 @@ M.nvim_tree = function()
   if not ok then
     return
   end
+
   nvim_tree.setup({
+    respect_buf_cwd = true,
+    sync_root_with_cwd = true,
     hijack_cursor = true,
     remove_keymaps = { "<Tab>", "<C-e>", "<CR>", "<2-LeftMouse>", "<2-RightMouse>", "<BS>", "o", "O", "a", "E", "-", "s", "g?" },
     view = {
@@ -418,6 +421,7 @@ end
     if not ok then
       return
     end
+
     bufferline.setup({
       options = {
         themable = true, -- allow customise UI
@@ -452,5 +456,21 @@ end
     })
   end
   -- }}}
+
+-- project {{{
+M.project = function()
+  local ok, project = pcall(require, 'project_nvim')
+  if not ok then
+    return
+  end
+
+  project.setup({
+    manual_mode = false,
+    detection_methods = { "pattern" },
+    patterns = { ".git" },
+    silent_chdir = true,
+  })
+end
+-- }}}
 
 return M

@@ -174,4 +174,16 @@ return require('packer').startup(function(use)
     end,
   }
   -- }}}
+
+  -- project {{{
+  use {
+    "ahmedkhalf/project.nvim",
+    after = "telescope.nvim",
+    config = function()
+      require('telescope').load_extension('projects')
+      require('plugins.config').project()
+    end,
+  }
+  -- }}}
+
 end)
