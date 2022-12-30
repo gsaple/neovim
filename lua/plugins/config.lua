@@ -425,9 +425,7 @@ M.bufferline = function()
   bufferline.setup({
     options = {
       themable = true, -- allow customise UI
-      right_mouse_command = function(bufnum)
-        require('bufdelete').bufdelete(bufnum, false)
-      end,
+      right_mouse_command = "Bdelete! %d",
       separator_style = { ' ', ' ' },
       show_buffer_icons = false,
       indicator = { style = 'none' },

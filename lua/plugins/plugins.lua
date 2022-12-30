@@ -187,11 +187,11 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  -- bufdelete{{{
+  -- vim-bbye {{{
   use {
-    "famiu/bufdelete.nvim",
-    module = "bufdelete",
+    "moll/vim-bbye",
+    cmd = { "Bdelete", "Bwipeout" },
   }
--- }}}
+  -- }}}
 
 end)
