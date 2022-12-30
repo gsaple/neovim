@@ -18,7 +18,6 @@ keymap("n", "<leader>h", "^", opts)
 -- find fildes
 keymap("n", "<S-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<S-b>", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<S-p>", "<cmd>Telescope projects<cr>", opts)
 
 -- navigation, split, close, resize for windows
 keymap("n", "<C-h>", "<C-w>h", opts)

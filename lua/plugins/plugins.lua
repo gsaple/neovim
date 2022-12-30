@@ -178,7 +178,8 @@ return require('packer').startup(function(use)
   -- project {{{
   use {
     "ahmedkhalf/project.nvim",
-    after = "telescope.nvim",
+    -- notes: this module should be loaded before telescope for integration
+    after = "which-key.nvim",
     config = function()
       require('telescope').load_extension('projects')
       require('plugins.config').project()
