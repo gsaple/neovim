@@ -21,3 +21,6 @@ va.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
     end
   end
 })
+
+-- match trailing whitespace:
+vim.cmd [[match ExtraWhitespace /\s\+$/]]

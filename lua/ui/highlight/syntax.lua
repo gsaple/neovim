@@ -13,7 +13,8 @@ M.highlight = function(C, D)
     Error = { bg = C.none, fg = D.dark_red },
     Todo = { bg = C.none, fg = C.yellow, bold = true },
     Special = { bg = C.none, fg = C.orange },
-    Underlined = { bg = C.none, fg = D.dark_blue, underline = true }
+    Underlined = { bg = C.none, fg = D.dark_blue, underline = true },
+    ExtraWhitespace = { link = 'Special' },
   }
 end
 return M
