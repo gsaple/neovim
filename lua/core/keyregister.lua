@@ -23,6 +23,7 @@ return {
     r = { "<cmd>TSBufToggle rainbow<cr>", "rainbow brackets" },
     f = { "<cmd>NvimTreeToggle<cr>", "file explorer" },
     b = { function() vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0) end, "bufferline" },
+    t = { "<cmd>ToggleTerm<cr>", "open terminal"},
   },
   f = {
     name = "Finder",
@@ -40,6 +41,7 @@ return {
       name = "Other",
       ["<C-\\>"] = { "redraw in the middle (insert)" },
       ["<C-c>"] = { "capitalise word (insert)" },
+      ["<C-p>"] = { "toggle terminal" },
       J = { "move text block down (visual)" },
       K = { "move text block up (visual)" },
       T = { "split window at bottom (normal) "},

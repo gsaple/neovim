@@ -475,4 +475,21 @@ M.project = function()
 end
 -- }}}
 
+-- toggleterm {{{
+M.toggleterm = function()
+  local ok, toggleterm = pcall(require, 'toggleterm')
+  if not ok then
+    return
+  end
+  toggleterm.setup({
+    open_mapping = "<C-p>",
+    shade_terminals = false,
+    direction = 'float',
+    float_opts = {
+      border = 'single',
+    },
+  })
+end
+-- }}}
+
 return M

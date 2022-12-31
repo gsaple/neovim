@@ -194,4 +194,15 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
+  -- toggleterm {{{
+  use {
+    "akinsho/toggleterm.nvim",
+    tag = '*',
+    cmd = "ToggleTerm",
+    config = function()
+      require('plugins.config').toggleterm()
+    end
+  }
+-- }}}
+
 end)
