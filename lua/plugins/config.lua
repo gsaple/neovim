@@ -486,7 +486,15 @@ M.toggleterm = function()
     shade_terminals = false,
     direction = 'float',
     float_opts = {
-      border = 'single',
+      border = 'none',
+    },
+    highlights = {
+      -- floatwindow only
+      NormalFloat = {
+        link = 'WinSeparator',
+      },
+      --FloatBorder = {
+      --},
     },
   })
 end
