@@ -298,7 +298,7 @@ M.which_key = function()
       }
     },
     icons = {
-      group = "祐",
+      group = " ",
     },
     popup_mappings = {
       scroll_down = '<c-j>',
