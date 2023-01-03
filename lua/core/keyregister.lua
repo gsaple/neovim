@@ -3,6 +3,7 @@ return {
   g = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "treesitter playground" },
   k = { "<cmd>set nu!<Bar> set rnu!<cr>", "toggle line numbers" },
   n = { "<cmd>tabnew<cr>", "open new project(s)"},
+  c = { "<cmd>cclose<cr>", "close quickfix window"},
   i = { "go to ith tab (project)" }, -- doc only
   p = {
     name = "Packer",
@@ -34,6 +35,14 @@ return {
     h = { "<cmd> silent! Telescope help_tags <cr>", "help page" },
     o = { "<cmd> silent! Telescope oldfiles <cr>", "find oldfiles" },
     p = { "<cmd> silent! Telescope projects <cr>", "find project" },
+  },
+  L = {
+    name = "Latex",
+    c = { "<plug>(vimtex-compile)", "continuous compile" },
+    C = { "<plug>(vimtex-stop)", "stop compilation" },
+    s = { "<plug>(vimtex-compile-ss)", "single compile" },
+    v = { "<plug>(vimtex-view)", "view PDF" },
+    x = { "<plug>(vimtex-clean)", "clean auxiliary files" },
   },
   d = {
     name = "Doc Only",

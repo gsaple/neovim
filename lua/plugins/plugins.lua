@@ -205,4 +205,15 @@ return require('packer').startup(function(use)
   }
 -- }}}
 
+  -- vimtex {{{
+  use {
+    "lervag/vimtex",
+    -- lazyloading will break inverse search
+    --ft = 'tex',
+    config = function()
+      require('plugins.config').vimtex()
+    end
+  }
+  -- }}}
+
 end)
