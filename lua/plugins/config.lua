@@ -112,7 +112,7 @@ M.cmp = function()
   --- }}}
 
   -- filetype specific settings
-  cmp.setup.filetype({ 'lua' }, {
+  cmp.setup.filetype(cmp_general, {
     --completion = { autocomplete = false },
     sources = {
       { name = "buffer" },
@@ -146,8 +146,7 @@ M.treesitter = function()
   end
 
   treesitter.setup({
-    ensure_installed = { "html", "css", "javascript", "comment",
-                        "c", "lua", "cpp", "python", "java" },
+    ensure_installed = ts_parsers,
     highlight = {
       enable = false,
       --disable = { "html" },

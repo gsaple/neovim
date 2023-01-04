@@ -33,8 +33,16 @@ opt.termguicolors = true
 opt.updatetime = 300
 opt.virtualedit = 'block'
 opt.wrap = false
-opt.whichwrap = "h,l,<,>,[,]"  
+opt.whichwrap = "h,l,<,>,[,]"
+
+--global variables
 cmp_toggle = true
+cmp_general = { 'lua' }
+ts_parsers = { "html", "css", "javascript",
+                "c", "cpp", "java", "rust", "go",
+                "lua", "python", "bash", "fish",
+                "comment",
+             }
 
 -- disable some builtin vim plugins {{{
 local default_plugins = {
