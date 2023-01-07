@@ -38,6 +38,7 @@ opt.whichwrap = "h,l,<,>,[,]"
 --global variables
 cmp_toggle = true
 cmp_general = { 'lua' }
+cmp_spell = { 'markdown', 'fish', 'tex' }
 ts_parsers = { "html", "css", "javascript",
                 "c", "cpp", "java", "rust", "go",
                 "lua", "python", "bash", "fish",

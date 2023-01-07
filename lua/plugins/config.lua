@@ -120,7 +120,7 @@ M.cmp = function()
     },
   })
 
-  cmp.setup.filetype({'markdown', 'fish'}, {
+  cmp.setup.filetype(cmp_spell, {
     sources = {
       { name = 'spell' },
       { name = 'buffer' },
