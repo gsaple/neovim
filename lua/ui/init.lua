@@ -1,8 +1,8 @@
 -- available themes: gruvbox_material, onedark, everforest, kanagawa
 -- linked components may use same colour sheme
 local themes = {
-  gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline', 'cmp' },
-  everforest = { 'nvim_tree', 'rainbow', 'float_window', 'which_key' },
+  gruvbox_material = { 'builtin', 'syntax', 'treesitter', 'indent_blankline', 'cmp', 'float_window' },
+  everforest = { 'nvim_tree', 'rainbow', 'which_key' },
   onedark = { 'statusline', 'telescope' },
   kanagawa = { 'bufferline' }
 }

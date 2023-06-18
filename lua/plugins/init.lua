@@ -1,57 +1,30 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-local firsttime_setup = false
-if fn.empty(fn.glob(install_path)) > 0 then
-  firsttime_setup = fn.system {
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  print '==============================================='
+  print '       Plugins are going to be installed;'
+  print '       Blank screen may be encountered;'
+  print '       Wait until Lazy completes;'
+  print '       Then restart nvim'
+  print '==============================================='
+  vim.fn.system({
     "git",
     "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  vim.cmd [[packadd packer.nvim]]
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
-
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
-
-packer.init {
-  git = { clone_timeout = 6000 },
-  display = {
-    working_sym = "ﲊ",
-    error_sym = "✗ ",
-    done_sym = " ",
-    removed_sym = " ",
-    moved_sym = "",
-    open_fn = function()
-      return require("packer.util").float { border = "single" }
-    end,
+vim.opt.rtp:prepend(lazypath)
+local opts = { 
+  defaults = { lazy = true },
+  install = { colorscheme = nil },
+  change_detection = {
+    -- automatically check for config file changes and reload the ui
+    enabled = false,
+    notify = false, -- get a notification when changes are found
   },
-  profile = {
-    enable = true,
-    threshold = 0, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
-  },
-
 }
-
-require('plugins.plugins')
-
--- bootstrap neovim
-if firsttime_setup then
-  print '=================================='
-  print '    Plugins are being installed'
-  print '    Wait until Packer completes,'
-  print '       then restart nvim'
-  print '=================================='
-  require("packer").sync()
-end
+require("lazy").setup('plugins.plugins', opts)

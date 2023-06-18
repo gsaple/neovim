@@ -5,14 +5,6 @@ return {
   n = { "<cmd>tabnew<cr>", "open new project(s)"},
   c = { "<cmd>cclose<cr>", "close quickfix window"},
   i = { "go to ith tab (project)" }, -- doc only
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
   t = {
     name = "Toggle",
     p = { "<cmd>set cursorline!<Bar> set cursorcolumn!<cr>", "cursor lc" },
@@ -20,8 +12,7 @@ return {
     c = { "<cmd>lua cmp_toggle = not cmp_toggle<cr>", "cmp" },
     i = { "<cmd>IndentBlanklineToggle<cr>", "indent line" },
     C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
-    h = { "<cmd>TSBufToggle highlight<cr>", "treesitter" },
-    r = { "<cmd>TSBufToggle rainbow<cr>", "rainbow brackets" },
+    h = { "<cmd>TSBufToggle highlight <Bar> TSBufToggle rainbow<cr>", "treesitter" },
     f = { "<cmd>NvimTreeToggle<cr>", "file explorer" },
     b = { function() vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0) end, "bufferline" },
     t = { "<cmd>ToggleTerm<cr>", "open terminal"},

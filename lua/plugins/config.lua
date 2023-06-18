@@ -1,17 +1,5 @@
 local M = {}
 
--- web dev icon {{{
-M.webicon = function()
-  local ok, icon = pcall(require, 'nvim-web-devicons')
-  if not ok then
-    return
-  end
-  icon.setup {
-    default = true,
-  }
-end
--- }}}
-
 -- luasnip {{{
 M.luasnip = function()
   local ok, luasnip = pcall(require, 'luasnip')
@@ -154,9 +142,11 @@ M.treesitter = function()
     indent = { enable = true, },
     rainbow = {
       enable = false,
-      -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-      extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-      max_file_lines = nil, -- Do not enable for files with more than n lines, int
+      --list of languages you want to disable the plugin for
+      disable = { "jsx", "cpp" }, 
+      query = 'rainbow-parens',
+      -- Highlight the entire buffer all at once
+      strategy = require('ts-rainbow').strategy.global,
     },
   })
 end
@@ -271,7 +261,7 @@ M.telescope = function()
           ["?"] = actions.which_key,
         }
       },
-      preview = {hide_on_startup = true},
+      preview = { hide_on_startup = true, treesitter = false },
     },
   })
 end
@@ -381,7 +371,7 @@ M.nvim_tree = function()
     },
     update_focused_file = {
       enable = true,
-      --update_root = true,
+      update_root = true,
       ignore_list = {},
     },
     renderer = {
@@ -466,7 +456,7 @@ M.project = function()
 
   project.setup({
     manual_mode = false,
-    detection_methods = { "pattern" },
+    detection_methods = { "lsp", "pattern" },
     patterns = { ".git" },
     silent_chdir = true,
     datapath = vim.fn.stdpath("data"),
@@ -481,19 +471,17 @@ M.toggleterm = function()
     return
   end
   toggleterm.setup({
-    open_mapping = "<C-p>",
+    open_mapping = [[<C-\>]],
     shade_terminals = false,
     direction = 'float',
     float_opts = {
-      border = 'none',
+      border = 'double',
     },
     highlights = {
       -- floatwindow only
-      NormalFloat = {
-        link = 'WinSeparator',
+      FloatBorder = {
+        link = 'FloatBorder',
       },
-      --FloatBorder = {
-      --},
     },
   })
 end
