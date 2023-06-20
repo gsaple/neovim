@@ -29,9 +29,9 @@ return {
     i(0, "node"),
   })),
 
-  s("use", fmt([[
+  s("plugin", fmt([[
   -- {} {{{{{{
-  use {{
+  {{
     "{}",
     {}
   }}
