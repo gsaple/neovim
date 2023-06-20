@@ -170,7 +170,7 @@ return {
       require('plugins.config').toggleterm()
     end
   },
--- }}}
+  -- }}}
 
   -- vimtex {{{
   {
@@ -180,6 +180,17 @@ return {
     --ft = 'tex',
     config = function()
       require('plugins.config').vimtex()
+    end
+  },
+  -- }}}
+
+  -- mason.nvim {{{
+  {
+    "williamboman/mason.nvim",
+    cmd = "Mason",
+    build = ":MasonUpdate",
+    config = function()
+      require('plugins.config').mason()
     end
   },
   -- }}}
