@@ -26,5 +26,6 @@ local opts = {
     enabled = false,
     notify = false, -- get a notification when changes are found
   },
+  ui = { border = "double" },
 }
 require("lazy").setup('plugins.plugins', opts)

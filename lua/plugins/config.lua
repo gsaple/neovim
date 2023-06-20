@@ -338,7 +338,7 @@ M.nvim_tree = function()
     return
   end
 
-  
+  --- generated on_attach {{{
   local function on_attach(bufnr)
     local api = require('nvim-tree.api')
   
@@ -437,7 +437,8 @@ M.nvim_tree = function()
     vim.keymap.set('n', 'u', api.tree.change_root_to_parent, opts('Up'))
     vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
   end
-
+  ---}}}
+  
   nvim_tree.setup({
     on_attach = on_attach,
     respect_buf_cwd = true,
@@ -596,7 +597,13 @@ M.mason = function()
   if not ok then
     return
   end
-  mason.setup({})
+  mason.setup({
+    ui = { border = 'double' },
+    icons = { package_installed = "✓",
+              package_pending = "➜",
+              package_uninstalled = "✗"
+            },
+  })
 end
 -- }}}
 
