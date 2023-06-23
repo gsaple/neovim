@@ -9,7 +9,7 @@ return {
     name = "Toggle",
     p = { "<cmd>set cursorline!<Bar> set cursorcolumn!<cr>", "cursor lc" },
     l = { "<cmd>set list!<cr>", "non printable" },
-    c = { "<cmd>lua cmp_toggle = not cmp_toggle<cr>", "cmp" },
+    c = { "<cmd>lua global_params.cmp.toggle = not global_params.cmp.toggle<cr>", "cmp" },
     i = { "<cmd>IndentBlanklineToggle<cr>", "indent line" },
     C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
     h = { "<cmd>TSBufToggle highlight <Bar> TSBufToggle rainbow<cr>", "treesitter" },

@@ -95,12 +95,12 @@ M.cmp = function()
         return vim_item
       end,
     },
-    enabled = function() return cmp_toggle end,
+    enabled = function() return global_params.cmp.toggle end,
   })
   --- }}}
 
   -- filetype specific settings
-  cmp.setup.filetype(cmp_general, {
+  cmp.setup.filetype(global_params.cmp.ft_trigger, {
     --completion = { autocomplete = false },
     sources = {
       { name = "buffer" },
@@ -108,7 +108,7 @@ M.cmp = function()
     },
   })
 
-  cmp.setup.filetype(cmp_spell, {
+  cmp.setup.filetype(global_params.cmp.spell_trigger, {
     sources = {
       { name = 'spell' },
       { name = 'buffer' },
@@ -134,16 +134,16 @@ M.treesitter = function()
   end
 
   treesitter.setup({
-    ensure_installed = ts_parsers,
+    ensure_installed = global_params.tree_sitter.parsers,
     highlight = {
       enable = false,
-      --disable = { "html" },
+      disable = { "html" },
     },
     indent = { enable = true, },
     rainbow = {
       enable = false,
       --list of languages you want to disable the plugin for
-      disable = { "jsx" },
+      disable = { "jsx", "html", },
       query = 'rainbow-parens',
       -- Highlight the entire buffer all at once
       strategy = require('ts-rainbow').strategy.global,

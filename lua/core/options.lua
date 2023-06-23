@@ -35,15 +35,19 @@ opt.virtualedit = 'block'
 opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"
 
---global variables
-cmp_toggle = true
-cmp_general = { 'lua' }
-cmp_spell = { 'markdown', 'fish', 'tex' }
-ts_parsers = { "html", "css", "javascript",
-                "c", "cpp", "java", "rust", "go",
-                "lua", "python", "bash", "fish",
-                "comment",
-             }
+--global params
+global_params = {
+  cmp = {
+    toggle = true,
+    ft_trigger = { 'lua', 'python', 'html', 'css', },
+    spell_trigger = { 'markdown', 'fish', 'tex' },
+  },
+  tree_sitter = {
+    parsers = { "css", "javascript", "c", "cpp", "java", "lua", 
+      "python", "bash", "fish", "comment", 
+    },
+  },
+}
 
 -- disable some builtin vim plugins {{{
 local default_plugins = {
