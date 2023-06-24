@@ -42,7 +42,16 @@ return {
     i(0),
   })),
 
-  s("hi", fmt([[
+  s("fold", fmt([[
+  -- {} {{{{{{
+  {}
+  -- }}}}}}
+  ]], {
+    i(1),
+    i(0),
+  })),
+
+  s("hl", fmt([[
   M = {{}}
   M.highlight = function(C, D)
     return {{
