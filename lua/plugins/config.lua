@@ -8,19 +8,23 @@ M.luasnip = function()
   end
   require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})
   require("luasnip.loaders.from_vscode").lazy_load()
-  require("luasnip").config.set_config {
+  require("luasnip").setup({
     enable_autosnippets = true,
     update_events = 'TextChanged,TextChangedI',
     region_check_events = 'InsertEnter',
-  }
-  vim.cmd([[imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' ]])
-  vim.cmd([[smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>']])
-  vim.cmd([[imap <silent><expr> <C-b> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-b>']])
-  vim.cmd([[smap <silent><expr> <C-b> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<C-b>']])
-  vim.keymap.set("i", "<C-n>", "<Plug>luasnip-next-choice", {})
-  vim.keymap.set("s", "<C-n>", "<Plug>luasnip-next-choice", {})
-  vim.keymap.set("i", "<C-p>", "<Plug>luasnip-prev-choice", {})
-  vim.keymap.set("s", "<C-p>", "<Plug>luasnip-prev-choice", {})
+  })
+  vim.keymap.set('i', '<Tab>', function()
+      return luasnip.expand_or_jumpable() and '<Plug>luasnip-expand-or-jump' or '<Tab>'
+  end, {expr = true})
+  vim.keymap.set('s', '<Tab>', '<Plug>luasnip-jump-next', {})
+  vim.keymap.set({'i', 's'}, '<C-b>', '<Plug>luasnip-jump-prev', {})
+  vim.keymap.set({'i', 's'}, '<C-n>', function()
+      return luasnip.choice_active() and '<Plug>luasnip-next-choice' or nil
+  end, {expr = true})
+  vim.keymap.set({'i', 's'}, '<C-p>', function()
+      return luasnip.choice_active() and '<Plug>luasnip-prev-choice' or nil
+  end, {expr = true})
+
 end
 -- }}}
 
