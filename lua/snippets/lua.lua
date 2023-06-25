@@ -34,7 +34,7 @@ return {
   {{
     "{}",
     {}
-  }}
+  }},
   -- }}}}}}
   ]], {
     f(function(args, snip, _) return args[1][1]:match("[^/]+$") end, {1}),
