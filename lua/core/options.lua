@@ -44,8 +44,13 @@ global_params = {
   },
   tree_sitter = {
     parsers = { "css", "javascript", "c", "cpp", "java", "lua", 
-      "python", "bash", "fish", "comment", 
+      "python", "bash", "fish", "comment", "markdown", "markdown_inline", 
     },
+  },
+  lsp = {
+    --servers = { 'lua_ls', 'pyright', 'html', 'cssls', },
+    servers = { 'lua_ls' },
+    ft_trigger = { 'lua', 'python', 'html', 'css', },
   },
 }
 
