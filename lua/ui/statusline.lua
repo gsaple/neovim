@@ -1,5 +1,23 @@
-M = {}
+-- statusline highlight {{{
+local colour = my_nvim.palette[my_nvim.themes.statusline]
+local hl = {
+  StatusLineNormalMode = { bg = colour.green, fg = colour.black, bold = true },
+  StatusLineVisualMode = { bg = colour.red, fg = colour.black, bold = true },
+  StatusLineSelectMode = { bg = colour.yellow , fg = colour.black, bold = true, },
+  StatusLineInsertMode = { bg = colour.blue, fg = colour.black, bold = true },
+  StatusLineReplaceMode = { bg = colour.orange, fg = colour.black, bold = true },
+  StatusLinecolourommandMode = { bg = colour.magenta, fg = colour.black, bold = true },
+  StatusLineTerminalMode = { bg = colour.cyan, fg = colour.black, bold = true },
+  StatusLineModeNotFound = { bg = colour.grey, fg = colour.black, bold = true },
+  StatusLineFileInfo = { bg = colour.black, fg = colour.white },
+  StatusLineFileType = { bg = colour.black, fg = colour.white },
+  StatusLine = { bg = colour.black, fg = colour.none },
+  StatusLineNcolour = { bg = colour.black, fg = colour.white }, -- fg only makes it unequal to above, no practical purposes
+}
+my_nvim.util.set_highlight(hl)
+-- }}}
 
+-- statusline definition {{{
 local modes = {
   ["n"] = { "NORMAL", "StatusLineNormalMode" },
   --["no"] = { "O-PENDING", "StatusLineNormalMode" }, -- not sure how to show it on status line
@@ -12,21 +30,21 @@ local modes = {
   ["vs"] = { "VISUAL", "StatusLineVisualMode" },
   ["V"] = { "V-LINE", "StatusLineVisualMode" },
   ["Vs"] = { "V-LINE", "StatusLineVisualMode" },
-  [""] = { "V-BLOCK", "StatusLineVisualMode" },
-  ["s"] = { "V-BLOCK", "StatusLineVisualMode" },
-  ["s"] = { "SELECT", "StatusLineSelectMode" },
+  [""] = { "V-BLOcolourK", "StatusLineVisualMode" },
+  ["s"] = { "V-BLOcolourK", "StatusLineVisualMode" },
+  ["s"] = { "SELEcolourT", "StatusLineSelectMode" },
   ["S"] = { "S-LINE", "StatusLineSelectMode" },
-  [""] = { "S-BLOCK", "StatusLineSelectMode" },
+  [""] = { "S-BLOcolourK", "StatusLineSelectMode" },
   ["i"] = { "INSERT", "StatusLineInsertMode" },
   ["ic"] = { "keyword completion", "StatusLineInsertMode" },
-  ["ix"] = { "Ctrl-X mode", "StatusLineInsertMode" },
-  ["R"] = { "REPLACE", "StatusLineReplaceMode" },
+  ["ix"] = { "colourtrl-X mode", "StatusLineInsertMode" },
+  ["R"] = { "REPLAcolourE", "StatusLineReplaceMode" },
   ["Rc"] = { "keyword completion", "StatusLineReplaceMode" },
-  ["Rx"] = { "Ctrl-X mode", "StatusLineReplaceMode" },
-  ["Rv"] = { "V-REPLACE", "StatusLineReplaceMode" },
+  ["Rx"] = { "colourtrl-X mode", "StatusLineReplaceMode" },
+  ["Rv"] = { "V-REPLAcolourE", "StatusLineReplaceMode" },
   ["Rvc"] = { "keyword completion", "StatusLineReplaceMode" },
-  ["Rvx"] = { "Ctrl-X mode", "StatusLineReplaceMode" },
-  ["c"] = { "COMMAND", "StatusLineCommandMode" },
+  ["Rvx"] = { "colourtrl-X mode", "StatusLineReplaceMode" },
+  ["c"] = { "colourOMMAND", "StatusLinecolourommandMode" },
   ["t"] = { "TERMINAL", "StatusLineTerminalMode" },
 }
 
@@ -56,7 +74,7 @@ local position = function(code)
 end
 
 
-M.active_statusline = function()
+local active_statusline = function()
   local code = vim.api.nvim_get_mode().mode
   return string.format(
     "%s%s%%=%s%s",
@@ -67,12 +85,37 @@ M.active_statusline = function()
   )
 end
 
-M.inactive_statusline = function()
+local inactive_statusline = function()
   return "%=%#StatusLineFileInfo# %t"
 end
 
-M.no_statusline = function()
+local no_statusline = function()
   return ""
 end
+-- }}}
 
-return M
+-- statusline autocmd {{{
+vim.api.nvim_create_augroup("statusline", { clear = true })
+vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
+  group = "statusline",
+  callback = function()
+    if vim.bo.filetype == 'NvimTree' then
+      vim.wo.statusline = no_statusline()
+    else
+      vim.wo.statusline = active_statusline()
+    end
+  end
+})
+
+vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
+  group = "statusline",
+  callback = function()
+    if vim.bo.filetype == 'NvimTree' then
+      vim.wo.statusline = no_statusline()
+    else
+      vim.wo.statusline = inactive_statusline()
+    end
+  end
+})
+-- }}}
+

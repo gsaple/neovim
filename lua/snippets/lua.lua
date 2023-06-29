@@ -51,19 +51,16 @@ return {
     i(0),
   })),
 
-  s("hl", fmt([[
-  M = {{}}
-  M.highlight = function(C, D)
-    return {{
-      {} = {{ bg = {}, fg = {} }},
-      {}
-    }}
-  end
-  return M
+  s("highlight", fmt([[
+  local colour = my_nvim.palette[my_nvim.themes.{}]
+  local hl = {{
+    {} = {{}},
+  }}
+  my_nvim.util.set_highlight(hl)
+  {}
   ]], {
-    i(1, "group"),
-    i(2),
-    i(3),
+    i(1, "component"),
+    i(2, "group_name"),
     i(0),
   })),
 }
