@@ -1,3 +1,5 @@
+-- draw statusline
+
 -- statusline highlight {{{
 local colour = my_nvim.palette[my_nvim.themes.statusline]
 local hl = {
@@ -73,8 +75,9 @@ local position = function(code)
   return string.format("%%#%s# %s ", modes[code][2], line)
 end
 
-
-local active_statusline = function()
+-- it seems that customised dynamic statusline MUST be set via "%!v:lua..." ???
+-- hence the following function is intentionally made global
+function _G.active_statusline()
   local code = vim.api.nvim_get_mode().mode
   return string.format(
     "%s%s%%=%s%s",
@@ -98,7 +101,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
     if vim.bo.filetype == 'NvimTree' then
       vim.wo.statusline = ""
     else
-      vim.wo.statusline = active_statusline()
+      vim.wo.statusline = "%!v:lua.active_statusline()"
     end
   end
 })
