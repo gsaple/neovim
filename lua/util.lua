@@ -4,6 +4,7 @@ local M = {}
 -- increment: integer to change RGB components, negative for darkening
 -- no safe guard here, increment should be sensible
 -- e.g. light_black = lighten(colour.black, 5)
+-- note e.g. decimal form of '#ea6962' is 15362402 which has nothing to do with 234,105,98
 M.lighten = function(colour, increment)
   return string.gsub(colour, '#', '0x') + increment * 65793 -- 1 + 16^2 + 16^4
 end
