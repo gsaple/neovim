@@ -12,7 +12,7 @@ local hl = {
   StatusLineFileInfo = { bg = colour.black, fg = colour.white },
   StatusLineFileType = { bg = colour.black, fg = colour.white },
   StatusLine = { bg = colour.black, fg = colour.none },
-  StatusLineNcolour = { bg = colour.black, fg = colour.white }, -- fg only makes it unequal to above, no practical purposes
+  StatusLineNC = { bg = colour.black, fg = colour.black }, -- fg only makes it unequal to above, no practical purposes
 }
 my_nvim.util.set_highlight(hl)
 -- }}}
