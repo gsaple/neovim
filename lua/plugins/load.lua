@@ -123,10 +123,10 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    cmd = 'NvimTreeToggle',
+    cmd = 'NvimTreeOpen',
     version = "*",
     config = function()
-      require('plugins.config').nvim_tree()
+      require('plugins.config.nvim_tree')
     end,
   },
   -- }}}

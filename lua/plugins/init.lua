@@ -28,4 +28,4 @@ local opts = {
   },
   ui = { border = "double" },
 }
-require("lazy").setup('plugins.plugins', opts)
+require("lazy").setup('plugins.load', opts)
