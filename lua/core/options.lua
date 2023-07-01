@@ -35,6 +35,8 @@ opt.virtualedit = 'block'
 opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"
 
+vim.cmd [[match ExtraWhitespace /\s\+$/]]
+
 --global params
 global_params = {
   cmp = {
