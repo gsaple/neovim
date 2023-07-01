@@ -55,7 +55,7 @@ local getmode = function(code)
   return string.format("%%#%s# %s ", modes[code][2], modes[code][1])
 end
 
-local file_info = "%#StatusLineFileInfo# %t %m%r"
+local file_info = "%#StatusLineFileInfo# %f %m%r"
 
 local function file_type()
   local filetype = vim.bo.filetype
@@ -86,11 +86,7 @@ local active_statusline = function()
 end
 
 local inactive_statusline = function()
-  return "%=%#StatusLineFileInfo# %t"
-end
-
-local no_statusline = function()
-  return ""
+  return "%=%#StatusLineFileInfo# %f"
 end
 -- }}}
 
@@ -100,7 +96,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
   group = "statusline",
   callback = function()
     if vim.bo.filetype == 'NvimTree' then
-      vim.wo.statusline = no_statusline()
+      vim.wo.statusline = ""
     else
       vim.wo.statusline = active_statusline()
     end
@@ -111,11 +107,10 @@ vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
   group = "statusline",
   callback = function()
     if vim.bo.filetype == 'NvimTree' then
-      vim.wo.statusline = no_statusline()
+      vim.wo.statusline = ""
     else
       vim.wo.statusline = inactive_statusline()
     end
   end
 })
 -- }}}
-

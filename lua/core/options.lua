@@ -8,7 +8,7 @@ opt.fillchars = {vert = " ", vertleft = " ", vertright = " ",
 opt.foldmethod = "marker"
 opt.history = 2000
 opt.ignorecase = true
-opt.laststatus = 3
+opt.laststatus = 2
 opt.linebreak = true
 opt.listchars = "tab: ,space:␣,eol:﬋,trail:"
 opt.mouse = "a" -- allow mouse to be used in nvic
