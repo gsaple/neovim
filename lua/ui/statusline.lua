@@ -22,7 +22,7 @@ my_nvim.util.set_highlight(hl)
 -- statusline definition {{{
 local modes = {
   ["n"] = { "NORMAL", "StatusLineNormalMode" },
-  --["no"] = { "O-PENDING", "StatusLineNormalMode" }, -- not sure how to show it on status line
+  ["no"] = { "O-PENDING", "StatusLineNormalMode" },
   ["niI"] = { "(insert)", "StatusLineNormalMode" },
   ["niR"] = { "(replace)", "StatusLineNormalMode" },
   ["niV"] = { "(vreplace)", "StatusLineNormalMode" },
@@ -115,5 +115,12 @@ vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
       vim.wo.statusline = inactive_statusline()
     end
   end
+})
+
+-- for operator pending mode
+-- https://github.com/vim/vim/issues/12012
+vim.api.nvim_create_autocmd({"ModeChanged"}, {
+  group = "statusline",
+  command = "redrawstatus",
 })
 -- }}}
