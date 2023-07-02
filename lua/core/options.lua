@@ -42,7 +42,7 @@ global_params = {
   cmp = {
     toggle = true,
     ft_trigger = { 'lua', 'python', 'html', 'css', },
-    spell_trigger = { 'markdown', 'fish', 'tex' },
+    spell_trigger = { 'markdown', 'gitcommit', 'tex' },
   },
   tree_sitter = {
     parsers = { "css", "javascript", "c", "cpp", "java", "lua", 

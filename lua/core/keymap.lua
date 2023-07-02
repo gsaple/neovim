@@ -79,3 +79,6 @@ keymap("n", "<leader>6", "6gt", opts)
 keymap("n", "<leader>7", "7gt", opts)
 keymap("n", "<leader>8", "8gt", opts)
 keymap("n", "<leader>9", "9gt", opts)
+
+-- commit temp buffer for spell check
+keymap("n", "C", "<cmd>tabnew COMMIT_EDITMSG<Bar>setlocal buftype=nowrite<BAR>setlocal bufhidden=delete<BAR>setlocal noswapfile<cr>", opts)
