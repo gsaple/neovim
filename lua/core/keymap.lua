@@ -82,3 +82,8 @@ keymap("n", "<leader>9", "9gt", opts)
 
 -- commit temp buffer for spell check
 keymap("n", "C", "<cmd>tabnew COMMIT_EDITMSG<Bar>setlocal buftype=nowrite<BAR>setlocal bufhidden=delete<BAR>setlocal noswapfile<cr>", opts)
+
+-- delete all buffers in a tab (project)
+keymap("n", "<leader>p", function() my_nvim.util.delete_all_bufs_in_current_tab() end, opts)
+-- delete current buffer
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)

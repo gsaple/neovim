@@ -15,4 +15,12 @@ M.set_highlight = function(highlight)
   end
 end
 
+-- delete all buffers in the current tab
+M.delete_all_bufs_in_current_tab = function()
+  local buffers = vim.fn.tabpagebuflist()
+  for _, buffer in ipairs(buffers) do
+    vim.cmd("bd " .. buffer)
+  end
+end
+
 return M

@@ -15,7 +15,7 @@ my_nvim.themes = {
   which_key = 'everforest',
   statusline =  'onedark',
   telescope = 'onedark',
-  bufferline = 'kanagawa',
+  tabline = 'kanagawa',
 }
 
 my_nvim.util = require("util")
