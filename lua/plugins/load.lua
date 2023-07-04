@@ -87,7 +87,7 @@ return {
                      'nvim-tree/nvim-tree.lua',
                    },
     config = function()
-      require('plugins.config').telescope()
+      require('plugins.config.telescope')
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('projects')
     end,

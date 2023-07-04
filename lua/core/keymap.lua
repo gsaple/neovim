@@ -15,13 +15,6 @@ keymap("n", "<leader>l", "g_", opts)
 -- first non-blank char
 keymap("n", "<leader>h", "^", opts)
 
--- find files, buffers, projects
-keymap("n", "<S-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<S-b>", "<cmd>lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>", opts)
-keymap("n", "<S-p>", "<cmd>NvimTreeClose<Bar>lua require('telescope').extensions.projects.projects{}<cr>", opts)
-keymap("n", "<S-h>", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
-keymap("n", "<S-l>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-
 -- navigation, split, close, resize for windows
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
