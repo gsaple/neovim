@@ -30,3 +30,17 @@ end
 vim.opt.tabline = "%!v:lua.tabline()"
 -- }}}
 
+-- tabline autocmd {{{
+vim.api.nvim_create_augroup("tabline", { clear = true })
+vim.api.nvim_create_autocmd({"TabEnter"}, {
+  group = "tabline",
+  callback = function()
+    if vim.bo.filetype == 'NvimTree' then
+       -- from project.nvim, pwd cannot update when the current buffer is a tree buffer
+       -- so go to the right of the tree buffer to update the tree root (caused by pwd updates)
+       -- one caveat is that there should be a buffer to the right of the tree buffer, which is usually the case
+       vim.cmd [[exe "normal!\<C-w>l"]]
+    end
+  end
+})
+-- }}}

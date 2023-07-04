@@ -25,7 +25,7 @@ return {
     b = { "<cmd> lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>", "find buffers" },
     h = { "<cmd> lua require('telescope.builtin').help_tags() <cr>", "help page" },
     o = { "<cmd> lua require('telescope.builtin').oldfiles() <cr>", "find oldfiles" },
-    p = { "<cmd> lua require('telescope').extensions.projects.projects{}<cr>", "find project" },
+    p = { "<cmd> NvimTreeClose<Bar>lua require('telescope').extensions.projects.projects{}<cr>", "find project" },
   },
   L = {
     name = "Latex",

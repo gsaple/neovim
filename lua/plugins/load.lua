@@ -84,6 +84,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 
                      'nvim-telescope/telescope-fzf-native.nvim',
                      'ahmedkhalf/project.nvim',
+                     'nvim-tree/nvim-tree.lua',
                    },
     config = function()
       require('plugins.config').telescope()
@@ -123,7 +124,7 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    cmd = 'NvimTreeOpen',
+    --cmd = 'NvimTreeOpen',
     version = "*",
     config = function()
       require('plugins.config.nvim_tree')
