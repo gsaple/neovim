@@ -58,8 +58,7 @@ return {
   local hl = {{
     {} = {{}},
   }}
-  my_nvim.util.set_highlight(hl)
-  {}
+  my_nvim.util.set_highlight(hl){}
   ]], {
     i(1, "component"),
     i(2, "group_name"),
