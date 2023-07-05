@@ -115,7 +115,7 @@ return {
     "folke/which-key.nvim",
     keys = "l",
     config = function()
-      require('plugins.config').which_key()
+      require('plugins.config.which_key')
     end,
   },
   -- }}}

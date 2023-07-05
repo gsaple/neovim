@@ -1,4 +1,24 @@
-return {
+local ok, which_key = pcall(require, 'which-key')
+if not ok then
+  return
+end
+
+-- highlight {{{
+local colour = my_nvim.palette[my_nvim.themes.which_key]
+local hl = {
+WhichKey = { bg = colour.none, fg = colour.red },
+WhichKeyGroup = { bg = colour.none, fg = colour.orange, bold = true },
+WhichKeySeparator = { bg = colour.none, fg = colour.grey },
+WhichKeyDesc = { bg = colour.none, fg = colour.cyan },
+WhichKeyFloat = { bg = colour.black, fg = colour.white },
+WhichKeyBorder = { bg = colour.none, fg = colour.grey },
+WhichKeyValue = { link  = 'WhichKeySeparator'},
+}
+my_nvim.util.set_highlight(hl)
+-- }}}
+
+-- keymapping {{{
+local map = {
   a = { [[:/[^\d0-\d127]<cr>]], "search non-ASCII chars" },
   g = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "treesitter playground" },
   k = { "<cmd>set nu!<Bar> set rnu!<cr>", "toggle line numbers" },
@@ -75,3 +95,59 @@ return {
     },
   },
 }
+--local opts = {
+--  mode = "n", -- normal mode
+--  prefix = "<>",
+--  buffer = nil, -- Specify a buffer number for buffer local mappings
+--  silent = true, -- use `silent` when creating keymaps
+--  noremap = true, -- use `noremap` when creating keymaps
+--  nowait = false, -- use `nowait` when creating keymaps
+--}
+which_key.register(map, { prefix = "<leader>" })
+which_key.register({
+  ["`"] = "which_key_ignore",
+  ["@"] = "which_key_ignore",
+  ['"'] = "which_key_ignore",
+  ["'"] = "which_key_ignore",
+})
+-- }}}
+
+-- setup {{{
+which_key.setup({
+  plugins = {
+    presets = {
+      operators = false,
+      motions = false,
+      text_objects = false,
+      windows = false, -- default bindings on <c-w>
+      nav = false, -- misc bindings to work with windows
+      z = false, -- bindings for prefixed with z
+      g = false, -- bindings for prefixed with g
+    }
+  },
+  icons = {
+    group = " ",
+  },
+  popup_mappings = {
+    scroll_down = '<c-j>',
+    scroll_up = '<c-k>',
+  },
+  window = {
+    border = "none", -- none, single, double, shadow
+    position = "bottom", -- bottom, top
+  },
+  ignore_missing = true,
+  layout = {
+    height = { min = 4, max = 10 }, -- min and max height of the columns
+    width = { min = 20, max = 90 }, -- min and max width of the columns
+    spacing = 10, -- spacing between columns
+    align = "left", -- align columns left, center or right
+  },
+  disable = {
+    buftypes = {"prompt"},
+    filetypes = { "TelescopePrompt", "NvimTree" },
+  },
+  show_help = false,
+  show_keys = false,
+})
+-- }}}
