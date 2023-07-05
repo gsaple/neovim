@@ -50,7 +50,7 @@ return {
       "f3fora/cmp-spell",
     },
     config = function()
-      require('plugins.config').cmp()
+      require('plugins.config.cmp')
     end,
   },
   -- }}}

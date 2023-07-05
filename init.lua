@@ -18,6 +18,14 @@ my_nvim.themes = {
   tabline = 'kanagawa',
 }
 
+my_nvim.cmp = {
+  toggle = true,
+  spell_trigger = { 'markdown', 'gitcommit', 'tex' },
+}
+
+-- file type triggers for cmp completion and lsp config
+my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', }
+
 my_nvim.util = require("util")
 
 require('core')
