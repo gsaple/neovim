@@ -61,7 +61,7 @@ return {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-      require('plugins.config').autopairs()
+      require('plugins.config.autopairs')
     end,
   },
   -- }}}
@@ -156,7 +156,7 @@ return {
     --cmd = "ToggleTerm",
     keys = "l",
     config = function()
-      require('plugins.config').toggleterm()
+      require('plugins.config.toggleterm')
     end
   },
   -- }}}
