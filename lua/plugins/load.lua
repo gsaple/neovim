@@ -71,7 +71,7 @@ return {
     "norcalli/nvim-colorizer.lua",
     cmd = "ColorizerToggle",
     config = function()
-      require('plugins.config').colorizer()
+      require('plugins.config.colorizer')
     end,
   },
   -- }}}
@@ -168,7 +168,13 @@ return {
     lazy = false,
     --ft = 'tex',
     config = function()
-      require('plugins.config').vimtex()
+      vim.g.vimtex_mappings_enabled = 0
+      vim.g.vimtex_complete_enabled = 0
+      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_quickfix_ignore_filters = {
+        'Underfull \\\\hbox',
+        'Overfull \\\\hbox',
+      }
     end
   },
   -- }}}
@@ -179,7 +185,7 @@ return {
     cmd = "Mason",
     build = ":MasonUpdate",
     config = function()
-      require('plugins.config').mason()
+      require('plugins.config.mason')
     end
   },
   -- }}}
