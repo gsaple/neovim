@@ -37,6 +37,8 @@ local hl = {
   SpellCap = { bg = dark_red, fg = builtin.white },
   Title = { bg = builtin.none, fg = builtin.magenta, bold = true },
   Visual = { bg = builtin.red, fg = builtin.black },
+  NormalFloat = { bg = builtin.none, fg = builtin.white },
+  FloatBorder = { bg = builtin.none, fg = builtin.grey },
   -- }}}
   -- syntax group {{{
   Comment = { bg = syntax.none, fg = syntax.grey },

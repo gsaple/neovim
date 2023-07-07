@@ -7,8 +7,6 @@ end
 local colour = my_nvim.palette[my_nvim.themes.cmp]
 local light_black = my_nvim.util.lighten(colour.black, 5)
 local hl = {
-  CmpNormal = { bg = colour.none, fg = colour.white },
-  CmpBorder = { bg = colour.none, fg = colour.grey },
   CmpSel = { bg = light_black, fg = colour.none },
   CmpItemAbbr = { bg = colour.none, fg = colour.white },
   CmpItemAbbrDeprecated = { bg = colour.none, fg = colour.grey, strikethrough = true },
@@ -87,7 +85,7 @@ cmp.setup({
   window = {
     completion = {
       border = 'rounded',
-      winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,Search:None,CursorLine:CmpSel",
+      winhighlight = "Normal:NormalFloat,CursorLine:CmpSel",
       --zindex = 1001,
       scrollbar = false,
     },
