@@ -21,7 +21,7 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     cmd = "IndentBlanklineToggle",
     config = function()
-      require('plugins.config').indent_blankline()
+      require('plugins.config.indent_blankline')
     end,
   },
   -- }}}
@@ -33,7 +33,7 @@ return {
     version = "*",
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
-      require('plugins.config').luasnip()
+      require('plugins.config.luasnip')
     end,
     --enabled = false,
   },
