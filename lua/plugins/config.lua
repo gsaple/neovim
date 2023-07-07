@@ -28,32 +28,6 @@ M.luasnip = function()
 end
 -- }}}
 
--- treesitter {{{
-M.treesitter = function()
-  local ok, treesitter = pcall(require, 'nvim-treesitter.configs')
-  if not ok then
-    return
-  end
-
-  treesitter.setup({
-    ensure_installed = global_params.tree_sitter.parsers,
-    highlight = {
-      enable = false,
-      disable = { "html" },
-    },
-    indent = { enable = true, },
-    rainbow = {
-      enable = false,
-      --list of languages you want to disable the plugin for
-      disable = { "jsx", "html", },
-      query = 'rainbow-parens',
-      -- Highlight the entire buffer all at once
-      strategy = require('ts-rainbow').strategy.global,
-    },
-  })
-end
--- }}}
-
 -- indent_blankline {{{
 M.indent_blankline = function()
   local ok, indent_blankline = pcall(require, 'indent_blankline')

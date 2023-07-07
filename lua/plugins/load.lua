@@ -10,7 +10,8 @@ return {
     build = ":TSUpdate",
     dependencies = {'HiPhish/nvim-ts-rainbow2'},
     config = function()
-      require('plugins.config').treesitter()
+      require('plugins.config.rainbow')
+      require('plugins.config.treesitter')
     end,
   },
   -- }}}

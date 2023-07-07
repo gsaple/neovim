@@ -26,6 +26,12 @@ my_nvim.cmp = {
 -- file type triggers for cmp completion and lsp config
 my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', }
 
+-- treesitter parsers
+my_nvim.parsers = {
+  "css", "javascript", "c", "cpp", "java", "lua", "python", "bash", "fish", "comment",
+  "markdown", "markdown_inline",
+}
+
 my_nvim.util = require("util")
 
 require('core')
