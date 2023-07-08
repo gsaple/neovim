@@ -8,10 +8,10 @@ return {
   -- highlight {{{{{{
   -- }}}}}}
 
-  -- keymapping {{{{{{
+  -- setup {{{{{{
   -- }}}}}}
 
-  -- setup {{{{{{
+  -- keymapping {{{{{{
   -- }}}}}}
   ]], {
     rep(1),
