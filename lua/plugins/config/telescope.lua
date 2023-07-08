@@ -24,7 +24,7 @@ my_nvim.util.set_highlight(hl)
 -- keymapping {{{
 local opts = {noremap = true, silent = true}
 local keymap = vim.keymap.set
-keymap("n", "<S-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", {})
+keymap("n", "<S-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<S-b>", "<cmd>lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>", opts)
 keymap("n", "<S-p>", "<cmd>NvimTreeClose<Bar>lua require('telescope').extensions.projects.projects{}<cr>", opts)
 keymap("n", "<S-h>", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
