@@ -20,6 +20,7 @@ local hl = {
   Directory = { bg = builtin.none, fg = builtin.cyan },
   NonText = { bg = builtin.black, fg = builtin.grey },
   ErrorMsg = { bg = dark_red, fg = builtin.none },
+  WarningMsg = { bg = builtin.none, fg = dark_red },
   WinSeparator = { bg = dark_black, fg = builtin.none },
   Folded = { bg = light_black, fg = builtin.grey },
   FoldColumn = { bg = builtin.black, fg = builtin.white },
