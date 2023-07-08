@@ -149,15 +149,13 @@ return {
   },
   -- }}}
 
-  -- toggleterm {{{
+  -- vim-floaterm {{{
   {
-    "akinsho/toggleterm.nvim",
-    version = "",
-    --cmd = "ToggleTerm",
+    "voldikss/vim-floaterm",
     keys = "l",
     config = function()
-      require('plugins.config.toggleterm')
-    end
+      require('plugins.config.floaterm')
+    end,
   },
   -- }}}
 

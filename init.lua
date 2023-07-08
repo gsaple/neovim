@@ -9,7 +9,6 @@ my_nvim.themes = {
   treesitter = 'gruvbox_material',
   indent_blankline = 'gruvbox_material',
   cmp = 'gruvbox_material',
-  float_window = 'gruvbox_material',
   nvim_tree = 'everforest',
   rainbow = 'everforest',
   which_key = 'everforest',

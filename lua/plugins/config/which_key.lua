@@ -78,7 +78,7 @@ local map = {
     h = { "<cmd>TSBufToggle highlight <Bar> TSBufToggle rainbow<cr>", "treesitter" },
     f = { "<cmd>NvimTreeOpen<cr>", "file explorer" },
     b = { function() vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0) end, "tabline" },
-    t = { "<cmd>ToggleTerm<cr>", "open terminal"},
+    t = { "<cmd>FloatermToggle<cr>", "open terminal"},
   },
   f = {
     name = "Finder",
