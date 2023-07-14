@@ -23,7 +23,7 @@ my_nvim.cmp = {
 }
 
 -- file type triggers for cmp completion and lsp config
-my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', }
+my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', 'sh',}
 
 -- treesitter parsers
 my_nvim.parsers = {
