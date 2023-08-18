@@ -3,6 +3,11 @@ if not ok then
   return
 end
 
+local ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
+if not ok then
+  return
+end
+
 -- highlight {{{
 -- }}}
 
@@ -19,5 +24,9 @@ mason.setup({
       package_uninstalled = "✗"
     },
   },
+})
+
+mason_lspconfig.setup({
+  ensure_installed = my_nvim.lsp_servers,
 })
 -- }}}

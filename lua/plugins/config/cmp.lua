@@ -101,7 +101,7 @@ cmp.setup({
     --["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
   },
   completion = {
-    keyword_length = 3,
+    keyword_length = 2,
   },
   formatting = {
     format = function(entry, vim_item)
@@ -118,6 +118,7 @@ cmp.setup.filetype(my_nvim.ft_trigger, {
   --completion = { autocomplete = false },
   sources = {
     { name = "buffer" },
+    { name = 'nvim_lsp' },
     { name = "luasnip" },
   },
 })

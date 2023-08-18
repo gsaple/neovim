@@ -27,7 +27,7 @@ return {
   -- }}}
 
   -- luasnip {{{
-  -- overloaded when cmp is loaded (required in cmp config)
+  -- loaded when cmp is loaded (required in cmp config)
   {
     "L3MON4D3/LuaSnip",
     version = "*",
@@ -44,6 +44,7 @@ return {
     "hrsh7th/nvim-cmp",
     event = { 'InsertEnter', 'CmdlineEnter' },
     dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
       "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -180,10 +181,31 @@ return {
   -- mason.nvim {{{
   {
     "williamboman/mason.nvim",
-    cmd = "Mason",
     build = ":MasonUpdate",
+  },
+  -- }}}
+
+  -- mason-lspconfig.nvim {{{
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
     config = function()
       require('plugins.config.mason')
+    end
+  },
+  -- }}}
+  
+  -- nvim-lspconfig {{{
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+    },
+    keys = "l",
+    config = function()
+      require('plugins.config.lsp')
     end
   },
   -- }}}

@@ -37,15 +37,6 @@ opt.whichwrap = "h,l,<,>,[,]"
 
 vim.cmd [[match ExtraWhitespace /\s\+$/]]
 
---global params
-global_params = {
-  lsp = {
-    --servers = { 'lua_ls', 'pyright', 'html', 'cssls', },
-    servers = { 'lua_ls' },
-    ft_trigger = { 'lua', 'python', 'html', 'css', },
-  },
-}
-
 -- disable some builtin vim plugins {{{
 local default_plugins = {
   "2html_plugin",

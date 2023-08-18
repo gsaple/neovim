@@ -22,8 +22,11 @@ my_nvim.cmp = {
   spell_trigger = { 'markdown', 'gitcommit', 'tex' },
 }
 
--- file type triggers for cmp completion and lsp config
+-- file type triggers for cmp completion
 my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', 'sh',}
+
+-- lsp servers
+my_nvim.lsp_servers = { 'html', 'cssls', 'tsserver', }
 
 -- treesitter parsers
 my_nvim.parsers = {
