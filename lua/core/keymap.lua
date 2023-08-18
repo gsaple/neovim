@@ -76,3 +76,5 @@ keymap("n", "C", "<cmd>tabnew COMMIT_EDITMSG<Bar>setlocal buftype=nowrite<BAR>se
 keymap("n", "<leader>p", function() my_nvim.util.delete_all_bufs_in_current_tab() end, opts)
 -- delete current buffer
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
+-- quit and not save
+keymap("n", "<S-q>", "ZQ", opts)
