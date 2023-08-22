@@ -1,5 +1,10 @@
 -- highlight {{{
 -- by default Floaterm linked to Normal, FloatermBorder linked to NormalFloat
+local hl = {
+  Floaterm = { link = 'NormalFloat' },
+  FloatermBorder = { link = 'FloatBorder' },
+}
+my_nvim.util.set_highlight(hl)
 -- }}}
 
 -- setup {{{
