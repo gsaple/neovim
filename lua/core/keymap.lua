@@ -78,3 +78,5 @@ keymap("n", "<leader>p", function() my_nvim.util.delete_all_bufs_in_current_tab(
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 -- quit and not save
 keymap("n", "<S-q>", "ZQ", opts)
+-- open html homepage, this only works after navigating to the html directory
+keymap("n", "<F5>", ":silent !reload --start-page %:. -b &<CR>", opts)
