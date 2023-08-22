@@ -79,4 +79,7 @@ keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 -- quit and not save
 keymap("n", "<S-q>", "ZQ", opts)
 -- open html homepage, this only works after navigating to the html directory
-keymap("n", "<F5>", ":silent !reload --start-page %:. -b &<CR>", opts)
+keymap("n", "<F12>", ":silent !reload --start-page %:. -b &<CR>", opts)
+
+-- open html homepage using brower
+keymap("n", "<F5>", ":silent !google-chrome %:p &<CR>", opts)
