@@ -1,4 +1,4 @@
-local ok, telescope = pcall(require, 'telescope')
+local ok, telescope = pcall(require, "telescope")
 if not ok then
   return
 end
@@ -13,19 +13,24 @@ local hl = {
   TelescopePromptNormal = { bg = light_black, fg = colour.white },
   TelescopePromptPrefix = { bg = colour.none, fg = colour.green },
   TelescopePromptTitle = { bg = colour.red, fg = colour.black },
-  TelescopeResultsTitle = { link = 'TelescopeBorder' },
+  TelescopeResultsTitle = { link = "TelescopeBorder" },
   TelescopePreviewTitle = { bg = colour.green, fg = colour.black },
-  TelescopePromptCounter = { link = 'TelescopePromptNormal' },
-  TelescopeSelection = { link = 'TelescopePromptNormal' },
+  TelescopePromptCounter = { link = "TelescopePromptNormal" },
+  TelescopeSelection = { link = "TelescopePromptNormal" },
 }
 my_nvim.util.set_highlight(hl)
 -- }}}
 
 -- keymapping {{{
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 keymap("n", "<S-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<S-b>", "<cmd>lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>", opts)
+keymap(
+  "n",
+  "<S-b>",
+  "<cmd>lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>",
+  opts
+)
 keymap("n", "<S-z>", "<cmd>NvimTreeClose<Bar>lua require('telescope').extensions.projects.projects{}<cr>", opts)
 keymap("n", "<S-h>", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap("n", "<S-l>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
@@ -33,7 +38,7 @@ keymap("n", "<S-l>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", op
 
 -- setup {{{
 local action_layout = require("telescope.actions.layout")
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
@@ -50,7 +55,7 @@ telescope.setup({
     },
     --file_ignore_patterns = {"^node_modules/"},
     --better to put files to be ignored in a gitignore file, see https://github.com/nvim-telescope/telescope.nvim/issues/522
-		mappings = {
+    mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
@@ -67,7 +72,7 @@ telescope.setup({
       n = {
         ["q"] = actions.close,
         ["?"] = actions.which_key,
-      }
+      },
     },
     preview = { hide_on_startup = true, treesitter = false },
   },

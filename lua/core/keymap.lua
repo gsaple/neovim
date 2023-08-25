@@ -1,4 +1,4 @@
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
 -- space as leader key
@@ -70,14 +70,27 @@ keymap("n", "<leader>8", "8gt", opts)
 keymap("n", "<leader>9", "9gt", opts)
 
 -- commit temp buffer for spell check
-keymap("n", "C", "<cmd>tabnew COMMIT_EDITMSG<Bar>setlocal buftype=nowrite<BAR>setlocal bufhidden=delete<BAR>setlocal noswapfile<cr>", opts)
+keymap(
+  "n",
+  "C",
+  "<cmd>tabnew COMMIT_EDITMSG<Bar>setlocal buftype=nowrite<BAR>setlocal bufhidden=delete<BAR>setlocal noswapfile<cr>",
+  opts
+)
 
 -- delete all buffers in a tab (project)
-keymap("n", "<leader>p", function() my_nvim.util.delete_all_bufs_in_current_tab() end, opts)
+keymap("n", "<leader>p", function()
+  my_nvim.util.delete_all_bufs_in_current_tab()
+end, opts)
+
 -- delete current buffer
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
+
 -- quit and not save
 keymap("n", "<S-q>", "ZQ", opts)
+
+-- format entire buffer
+keymap("n", "<C-f>", ":Format<CR>", opts)
+
 -- open html homepage, this only works after navigating to the html directory
 keymap("n", "<F12>", ":silent !reload --start-page %:. -b &<CR>", opts)
 

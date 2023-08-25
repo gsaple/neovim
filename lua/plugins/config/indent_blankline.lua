@@ -1,4 +1,4 @@
-local ok, indent_blankline = pcall(require, 'indent_blankline')
+local ok, indent_blankline = pcall(require, "indent_blankline")
 if not ok then
   return
 end
@@ -17,7 +17,7 @@ my_nvim.util.set_highlight(hl)
 
 -- setup {{{
 indent_blankline.setup({
-	filetype_exclude = {
+  filetype_exclude = {
     "help",
     "terminal",
     "alpha",
@@ -33,5 +33,5 @@ indent_blankline.setup({
   use_treesitter = true,
   show_trailing_blankline_indent = false,
 })
-vim.cmd [[IndentBlanklineDisable]]
+vim.cmd([[IndentBlanklineDisable]])
 -- }}}

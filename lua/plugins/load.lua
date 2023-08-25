@@ -8,10 +8,10 @@ return {
     -- note that treesitter can also be loaded when telescope is loaded
     cmd = "TSBufToggle",
     build = ":TSUpdate",
-    dependencies = {'HiPhish/nvim-ts-rainbow2'},
+    dependencies = { "HiPhish/nvim-ts-rainbow2" },
     config = function()
-      require('plugins.config.rainbow')
-      require('plugins.config.treesitter')
+      require("plugins.config.rainbow")
+      require("plugins.config.treesitter")
     end,
   },
   -- }}}
@@ -21,7 +21,7 @@ return {
     "lukas-reineke/indent-blankline.nvim",
     cmd = "IndentBlanklineToggle",
     config = function()
-      require('plugins.config.indent_blankline')
+      require("plugins.config.indent_blankline")
     end,
   },
   -- }}}
@@ -33,7 +33,7 @@ return {
     version = "*",
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
-      require('plugins.config.luasnip')
+      require("plugins.config.luasnip")
     end,
     --enabled = false,
   },
@@ -42,7 +42,7 @@ return {
   -- nvim-cmp {{{
   {
     "hrsh7th/nvim-cmp",
-    event = { 'InsertEnter', 'CmdlineEnter' },
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "saadparwaiz1/cmp_luasnip",
@@ -52,7 +52,7 @@ return {
       "f3fora/cmp-spell",
     },
     config = function()
-      require('plugins.config.cmp')
+      require("plugins.config.cmp")
     end,
   },
   -- }}}
@@ -62,7 +62,7 @@ return {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = function()
-      require('plugins.config.autopairs')
+      require("plugins.config.autopairs")
     end,
   },
   -- }}}
@@ -72,7 +72,7 @@ return {
     "norcalli/nvim-colorizer.lua",
     cmd = "ColorizerToggle",
     config = function()
-      require('plugins.config.colorizer')
+      require("plugins.config.colorizer")
     end,
   },
   -- }}}
@@ -83,15 +83,16 @@ return {
     tag = "0.1.1",
     --cmd = "Telescope",
     keys = "l",
-    dependencies = { 'nvim-lua/plenary.nvim', 
-                     'nvim-telescope/telescope-fzf-native.nvim',
-                     'ahmedkhalf/project.nvim',
-                     'nvim-tree/nvim-tree.lua',
-                   },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
+      "ahmedkhalf/project.nvim",
+      "nvim-tree/nvim-tree.lua",
+    },
     config = function()
-      require('plugins.config.telescope')
-      require('telescope').load_extension('fzf')
-      require('telescope').load_extension('projects')
+      require("plugins.config.telescope")
+      require("telescope").load_extension("fzf")
+      require("telescope").load_extension("projects")
     end,
   },
   -- }}}
@@ -99,7 +100,7 @@ return {
   -- telescope-fzf-native {{{
   {
     "nvim-telescope/telescope-fzf-native.nvim",
-    enabled = vim.fn.executable "make" ~= 0,
+    enabled = vim.fn.executable("make") ~= 0,
     build = "make",
   },
   -- }}}
@@ -108,7 +109,7 @@ return {
   {
     "nvim-treesitter/playground",
     cmd = "TSHighlightCapturesUnderCursor",
-    dependencies = {'nvim-treesitter/nvim-treesitter'},
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   -- }}}
 
@@ -117,19 +118,19 @@ return {
     "folke/which-key.nvim",
     keys = "l",
     config = function()
-      require('plugins.config.which_key')
+      require("plugins.config.which_key")
     end,
   },
   -- }}}
 
   -- nvim-tree {{{
   {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     --cmd = 'NvimTreeOpen',
     version = "*",
     config = function()
-      require('plugins.config.nvim_tree')
+      require("plugins.config.nvim_tree")
     end,
   },
   -- }}}
@@ -138,7 +139,7 @@ return {
   {
     "ahmedkhalf/project.nvim",
     config = function()
-      require('plugins.config.project')
+      require("plugins.config.project")
     end,
   },
   -- }}}
@@ -155,7 +156,7 @@ return {
     "voldikss/vim-floaterm",
     keys = "l",
     config = function()
-      require('plugins.config.floaterm')
+      require("plugins.config.floaterm")
     end,
   },
   -- }}}
@@ -169,12 +170,12 @@ return {
     config = function()
       vim.g.vimtex_mappings_enabled = 0
       vim.g.vimtex_complete_enabled = 0
-      vim.g.vimtex_view_method = 'zathura'
+      vim.g.vimtex_view_method = "zathura"
       vim.g.vimtex_quickfix_ignore_filters = {
-        'Underfull \\\\hbox',
-        'Overfull \\\\hbox',
+        "Underfull \\\\hbox",
+        "Overfull \\\\hbox",
       }
-    end
+    end,
   },
   -- }}}
 
@@ -192,11 +193,11 @@ return {
       "williamboman/mason.nvim",
     },
     config = function()
-      require('plugins.config.mason')
-    end
+      require("plugins.config.mason")
+    end,
   },
   -- }}}
-  
+
   -- nvim-lspconfig {{{
   {
     "neovim/nvim-lspconfig",
@@ -205,9 +206,18 @@ return {
     },
     keys = "l",
     config = function()
-      require('plugins.config.lsp')
-    end
+      require("plugins.config.lsp")
+    end,
   },
   -- }}}
 
+  -- formatter.nvim {{{
+  {
+    event = { "CmdlineEnter" },
+    "mhartington/formatter.nvim",
+    config = function()
+      require("plugins.config.formatter")
+    end,
+  },
+  -- }}}
 }

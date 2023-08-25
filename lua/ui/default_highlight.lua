@@ -15,8 +15,8 @@ local hl = {
   Hide = { bg = builtin.black, fg = builtin.black },
   ColorColumn = { bg = light_black, fg = builtin.none },
   CurSearch = { bg = cursor, fg = builtin.black },
-  CursorColumn = { link = 'ColorColumn'  },
-  CursorLine = { link = 'ColorColumn' },
+  CursorColumn = { link = "ColorColumn" },
+  CursorLine = { link = "ColorColumn" },
   Directory = { bg = builtin.none, fg = builtin.cyan },
   NonText = { bg = builtin.black, fg = builtin.grey },
   ErrorMsg = { bg = dark_red, fg = builtin.none },
@@ -45,7 +45,7 @@ local hl = {
   Comment = { bg = syntax.none, fg = syntax.grey },
   Constant = { bg = syntax.none, fg = syntax.magenta },
   String = { bg = syntax.none, fg = syntax.green },
-  Character = { link = 'String' },
+  Character = { link = "String" },
   Identifier = { bg = syntax.none, fg = syntax.blue },
   Function = { bg = syntax.none, fg = syntax.cyan },
   Statement = { bg = syntax.none, fg = syntax.red },
@@ -55,8 +55,7 @@ local hl = {
   Todo = { bg = syntax.none, fg = syntax.yellow, bold = true },
   Special = { bg = syntax.none, fg = syntax.orange },
   Underlined = { bg = syntax.none, fg = dark_blue, underline = true },
-  ExtraWhitespace = { link = 'Special' },
+  ExtraWhitespace = { link = "Special" },
   -- }}}
 }
 my_nvim.util.set_highlight(hl)
-

@@ -1,12 +1,12 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
-  print '==============================================='
-  print '       Plugins are going to be installed;'
-  print '       Blank screen may be encountered;'
-  print '       Wait until Lazy completes;'
-  print '       Then restart nvim'
-  print '==============================================='
+  print("===============================================")
+  print("       Plugins are going to be installed;")
+  print("       Blank screen may be encountered;")
+  print("       Wait until Lazy completes;")
+  print("       Then restart nvim")
+  print("===============================================")
   vim.fn.system({
     "git",
     "clone",
@@ -18,7 +18,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-local opts = { 
+local opts = {
   defaults = { lazy = true },
   install = { colorscheme = nil },
   change_detection = {
@@ -28,4 +28,4 @@ local opts = {
   },
   ui = { border = "double" },
 }
-require("lazy").setup('plugins.load', opts)
+require("lazy").setup("plugins.load", opts)

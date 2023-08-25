@@ -1,10 +1,17 @@
 local opt = vim.opt
-opt.clipboard = "unnamedplus"  -- access the system clipboard
+opt.clipboard = "unnamedplus" -- access the system clipboard
 opt.completeopt = "menu,menuone,noselect"
 --opt.cursorline = true
 opt.expandtab = true -- convert tabs to spaces when a <Tab> is pressed
-opt.fillchars = {vert = " ", vertleft = " ", vertright = " ",
-                 horiz = " ", horizup = " ", horizdown = " ",verthoriz = " "}
+opt.fillchars = {
+  vert = " ",
+  vertleft = " ",
+  vertright = " ",
+  horiz = " ",
+  horizup = " ",
+  horizdown = " ",
+  verthoriz = " ",
+}
 opt.foldmethod = "marker"
 opt.history = 2000
 opt.ignorecase = true
@@ -16,8 +23,8 @@ opt.pumheight = 10
 opt.ruler = false
 opt.scrolloff = 2
 opt.shiftwidth = 4 -- number of spaces when <<, >> or = is pressed
-opt.shortmess:append "sI"
-opt.showbreak = '↳ '
+opt.shortmess:append("sI")
+opt.showbreak = "↳ "
 opt.showcmd = false
 opt.showmode = false
 opt.sidescrolloff = 5
@@ -31,11 +38,11 @@ opt.tabstop = 4 -- number of spaces that a <Tab> in a file (maybe written by oth
 opt.timeoutlen = 300
 opt.termguicolors = true
 opt.updatetime = 300
-opt.virtualedit = 'block'
+opt.virtualedit = "block"
 opt.wrap = false
 opt.whichwrap = "h,l,<,>,[,]"
 
-vim.cmd [[match ExtraWhitespace /\s\+$/]]
+vim.cmd([[match ExtraWhitespace /\s\+$/]])
 
 -- disable some builtin vim plugins {{{
 local default_plugins = {

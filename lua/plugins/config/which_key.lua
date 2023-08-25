@@ -1,4 +1,4 @@
-local ok, which_key = pcall(require, 'which-key')
+local ok, which_key = pcall(require, "which-key")
 if not ok then
   return
 end
@@ -6,13 +6,13 @@ end
 -- highlight {{{
 local colour = my_nvim.palette[my_nvim.themes.which_key]
 local hl = {
-WhichKey = { bg = colour.none, fg = colour.red },
-WhichKeyGroup = { bg = colour.none, fg = colour.orange, bold = true },
-WhichKeySeparator = { bg = colour.none, fg = colour.grey },
-WhichKeyDesc = { bg = colour.none, fg = colour.cyan },
-WhichKeyFloat = { bg = colour.black, fg = colour.white },
-WhichKeyBorder = { bg = colour.none, fg = colour.grey },
-WhichKeyValue = { link  = 'WhichKeySeparator'},
+  WhichKey = { bg = colour.none, fg = colour.red },
+  WhichKeyGroup = { bg = colour.none, fg = colour.orange, bold = true },
+  WhichKeySeparator = { bg = colour.none, fg = colour.grey },
+  WhichKeyDesc = { bg = colour.none, fg = colour.cyan },
+  WhichKeyFloat = { bg = colour.black, fg = colour.white },
+  WhichKeyBorder = { bg = colour.none, fg = colour.grey },
+  WhichKeyValue = { link = "WhichKeySeparator" },
 }
 my_nvim.util.set_highlight(hl)
 -- }}}
@@ -37,8 +37,8 @@ which_key.setup({
     group = " ",
   },
   popup_mappings = {
-    scroll_down = '<c-j>',
-    scroll_up = '<c-k>',
+    scroll_down = "<c-j>",
+    scroll_up = "<c-k>",
   },
   window = {
     border = "none", -- none, single, double, shadow
@@ -52,7 +52,7 @@ which_key.setup({
     align = "left", -- align columns left, center or right
   },
   disable = {
-    buftypes = {"prompt"},
+    buftypes = { "prompt" },
     filetypes = { "TelescopePrompt", "NvimTree" },
   },
   show_help = false,
@@ -65,8 +65,8 @@ local map = {
   a = { [[:/[^\d0-\d127]<cr>]], "search non-ASCII chars" },
   g = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "treesitter playground" },
   k = { "<cmd>set nu!<Bar> set rnu!<cr>", "toggle line numbers" },
-  n = { "<cmd>tabnew<cr>", "open new project(s)"},
-  c = { "<cmd>cclose<cr>", "close quickfix window"},
+  n = { "<cmd>tabnew<cr>", "open new project(s)" },
+  c = { "<cmd>cclose<cr>", "close quickfix window" },
   i = { "go to ith tab (project)" }, -- doc only
   t = {
     name = "Toggle",
@@ -77,15 +77,23 @@ local map = {
     C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
     h = { "<cmd>TSBufToggle highlight <Bar> TSBufToggle rainbow<cr>", "treesitter" },
     f = { "<cmd>NvimTreeOpen<cr>", "file explorer" },
-    b = { function() vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0) end, "tabline" },
-    t = { "<cmd>FloatermToggle<cr>", "open terminal"},
+    b = {
+      function()
+        vim.opt.showtabline = (vim.go.showtabline == 0 and 2 or 0)
+      end,
+      "tabline",
+    },
+    t = { "<cmd>FloatermToggle<cr>", "open terminal" },
   },
   f = {
     name = "Finder",
     f = { "<cmd> lua require('telescope.builtin').find_files() <cr>", "find files" },
     a = { "<cmd> lua require('telescope.builtin').find_files({hidden=true}) <cr>", "find hidden" },
     g = { "<cmd> lua require('telescope.builtin').live_grep() <cr>", "live grep" },
-    b = { "<cmd> lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>", "find buffers" },
+    b = {
+      "<cmd> lua require('telescope.builtin').buffers({only_cwd=true,ignore_current_buffer=true })<cr>",
+      "find buffers",
+    },
     h = { "<cmd> lua require('telescope.builtin').help_tags() <cr>", "help page" },
     o = { "<cmd> lua require('telescope.builtin').oldfiles() <cr>", "find oldfiles" },
     p = { "<cmd> NvimTreeClose<Bar>lua require('telescope').extensions.projects.projects{}<cr>", "find project" },
@@ -100,15 +108,15 @@ local map = {
   },
   d = {
     name = "Doc Only",
-    o = { 
+    o = {
       name = "Other",
       ["<C-\\>"] = { "redraw in the middle (insert)" },
       ["<C-c>"] = { "capitalise word (insert)" },
       ["<C-p>"] = { "toggle terminal" },
       J = { "move text block down (visual)" },
       K = { "move text block up (visual)" },
-      T = { "split window at bottom (normal) "},
-      S = { "split window on right (normal) "},
+      T = { "split window at bottom (normal) " },
+      S = { "split window on right (normal) " },
     },
     t = {
       name = "Telescope",

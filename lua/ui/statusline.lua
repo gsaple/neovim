@@ -5,7 +5,7 @@ local colour = my_nvim.palette[my_nvim.themes.statusline]
 local hl = {
   StatusLineNormalMode = { bg = colour.green, fg = colour.black, bold = true },
   StatusLineVisualMode = { bg = colour.red, fg = colour.black, bold = true },
-  StatusLineSelectMode = { bg = colour.yellow , fg = colour.black, bold = true, },
+  StatusLineSelectMode = { bg = colour.yellow, fg = colour.black, bold = true },
   StatusLineInsertMode = { bg = colour.blue, fg = colour.black, bold = true },
   StatusLineReplaceMode = { bg = colour.orange, fg = colour.black, bold = true },
   StatusLineCommandMode = { bg = colour.magenta, fg = colour.black, bold = true },
@@ -79,13 +79,7 @@ end
 -- hence the following function is intentionally made global
 function _G.active_statusline()
   local code = vim.api.nvim_get_mode().mode
-  return string.format(
-    "%s%s%%=%s%s",
-    getmode(code),
-    file_info,
-    file_type(),
-    position(code)
-  )
+  return string.format("%s%s%%=%s%s", getmode(code), file_info, file_type(), position(code))
 end
 
 local inactive_statusline = function()
@@ -95,31 +89,31 @@ end
 
 -- statusline autocmd {{{
 vim.api.nvim_create_augroup("statusline", { clear = true })
-vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   group = "statusline",
   callback = function()
-    if vim.bo.filetype == 'NvimTree' then
+    if vim.bo.filetype == "NvimTree" then
       vim.wo.statusline = ""
     else
       vim.wo.statusline = "%!v:lua.active_statusline()"
     end
-  end
+  end,
 })
 
-vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
+vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
   group = "statusline",
   callback = function()
-    if vim.bo.filetype == 'NvimTree' then
+    if vim.bo.filetype == "NvimTree" then
       vim.wo.statusline = ""
     else
       vim.wo.statusline = inactive_statusline()
     end
-  end
+  end,
 })
 
 -- for operator pending mode
 -- https://github.com/vim/vim/issues/12012
-vim.api.nvim_create_autocmd({"ModeChanged"}, {
+vim.api.nvim_create_autocmd({ "ModeChanged" }, {
   group = "statusline",
   command = "redrawstatus",
 })
