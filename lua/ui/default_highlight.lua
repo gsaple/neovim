@@ -29,7 +29,7 @@ local hl = {
   Search = { bg = builtin.red, fg = builtin.black },
   LineNr = { bg = builtin.none, fg = dark_grey },
   CursorlineNr = { bg = builtin.none, fg = builtin.grey },
-  MatchParen = { bg = builtin.white, fg = builtin.black },
+  MatchParen = { bg = builtin.none, fg = builtin.none, underline = true },
   Question = { bg = builtin.none, fg = builtin.green },
   Pmenu = { bg = builtin.black, fg = builtin.white },
   PmenuSel = { bg = light_black, fg = builtin.white },
