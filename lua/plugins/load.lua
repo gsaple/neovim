@@ -220,4 +220,22 @@ return {
     end,
   },
   -- }}}
+
+  -- Comment.nvim {{{
+  {
+    "numToStr/Comment.nvim",
+    keys = "l",
+    config = function()
+      require("Comment").setup({
+        toggler = {
+          line = "gc",
+          block = "gb",
+        },
+        mappings = {
+          extra = false,
+        },
+      })
+    end,
+  },
+  -- }}}
 }
