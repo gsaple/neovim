@@ -31,6 +31,7 @@ indent_blankline.setup({
   context_char = " ",
   show_current_context = true,
   use_treesitter = true,
+  use_treesitter_scope = true,
   show_trailing_blankline_indent = false,
 })
 vim.cmd([[IndentBlanklineDisable]])
