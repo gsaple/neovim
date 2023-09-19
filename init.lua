@@ -30,6 +30,7 @@ my_nvim.lsp_servers = { "html", "cssls", "tsserver" }
 
 -- treesitter parsers
 my_nvim.parsers = {
+  "html",
   "css",
   "javascript",
   "c",
