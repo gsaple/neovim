@@ -23,7 +23,7 @@ my_nvim.cmp = {
 }
 
 -- file type triggers for cmp completion
-my_nvim.ft_trigger = { 'lua', 'python', 'html', 'css', 'sh',}
+my_nvim.ft_trigger = { "lua", "python", "html", "css", "sh", "scss", "javascript" }
 
 -- lsp servers
 my_nvim.lsp_servers = { "html", "cssls", "tsserver" }
