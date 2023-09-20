@@ -1,3 +1,8 @@
+if vim.g.vscode then
+  require("vscode")
+  return
+end
+
 _G.my_nvim = {}
 
 my_nvim.palette = require("ui.palette")
