@@ -1,7 +1,7 @@
-if vim.g.vscode then
-  require("vscode")
-  return
-end
+--if vim.g.vscode then
+--  require("vscode")
+--  return
+--end
 
 _G.my_nvim = {}
 

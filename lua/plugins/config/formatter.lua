@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   group = vim.api.nvim_create_augroup("fmt", {}),
-  pattern = { "*.html", "*.js", "*.css", "*.scss" },
+  pattern = { "*.html", "*.js", "*.css", "*.scss", "*.jsx" },
   command = "FormatWrite",
 })
 
@@ -37,6 +37,7 @@ require("formatter").setup({
     css = { require("formatter.defaults.prettierd") },
     scss = { require("formatter.defaults.prettierd") },
     javascript = { require("formatter.defaults.prettierd") },
+    javascriptreact = { require("formatter.defaults.prettierd") },
     sh = { require("formatter.filetypes.sh").shfmt },
 
     -- any filetype

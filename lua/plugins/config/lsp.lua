@@ -12,10 +12,19 @@ my_nvim.util.set_highlight(hl)
 -- setup {{{
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.html.setup({ capabilities = capabilities })
+--lspconfig.html.setup({ capabilities = capabilities })
 
 lspconfig.cssls.setup({
   capabilities = capabilities,
+  filetypes = { "css", "scss" },
+})
+
+lspconfig.emmet_ls.setup({
+  capabilities = capabilities,
+  filetypes = { "html" },
+})
+
+lspconfig.tsserver.setup({ capabilities = capabilities })
 -- }}}
 
 -- keymapping {{{
